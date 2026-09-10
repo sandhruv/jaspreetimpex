@@ -280,6 +280,28 @@
 
   .category-tab {
     justify-content: center;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+
+  .product-content {
+    padding: 20px;
+  }
+
+  .product-content h3 {
+    font-size: 1.15rem;
+  }
+
+  .cta-box {
+    padding: 30px 20px;
+  }
+
+  .cta-box h2 {
+    font-size: 1.5rem;
+  }
+
+  .visual-placeholder {
+    height: 250px;
   }
 }
 

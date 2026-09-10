@@ -553,9 +553,18 @@
 }
 
 @media (max-width: 576px) {
+  .top-bar {
+    padding: 6px 0;
+  }
+
   .top-bar-left {
     flex-direction: column;
-    gap: 5px;
+    gap: 3px;
+    font-size: 0.75rem;
+  }
+
+  .top-bar-item {
+    font-size: 0.75rem;
   }
 
   .logo-name {
@@ -566,6 +575,33 @@
     width: 40px;
     height: 40px;
     font-size: 1rem;
+  }
+
+  .logo-tagline {
+    font-size: 0.65rem;
+  }
+
+  .header {
+    padding: 10px 0;
+  }
+
+  .header.scrolled {
+    padding: 8px 0;
+  }
+
+  .nav {
+    width: 280px;
+    padding: 70px 15px 20px;
+  }
+
+  .nav-link {
+    padding: 14px 15px;
+    font-size: 1rem;
+  }
+
+  .mobile-menu-btn {
+    font-size: 1.6rem;
+    padding: 8px;
   }
 }
 

@@ -140,5 +140,17 @@
   .advantages-grid {
     grid-template-columns: 1fr;
   }
+
+  .advantage-card {
+    padding: 25px 20px;
+  }
+
+  .why-title {
+    font-size: 1.8rem;
+  }
+
+  .quality-checks {
+    padding: 20px;
+  }
 }
 

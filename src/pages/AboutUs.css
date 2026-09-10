@@ -431,5 +431,42 @@
   .story-stats {
     flex-direction: column;
   }
+
+  .page-hero {
+    padding: 130px 0 50px;
+  }
+
+  .page-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .page-hero p {
+    font-size: 0.95rem;
+  }
+
+  .story-content h2 {
+    font-size: 1.6rem;
+  }
+
+  .story-image .image-placeholder {
+    height: 250px;
+  }
+
+  .stat-box {
+    padding: 20px;
+  }
+
+  .stat-number {
+    font-size: 2rem;
+  }
+
+  .vision-card {
+    padding: 30px 20px;
+  }
+
+  .quality-statement {
+    font-size: 1rem;
+    padding: 20px;
+  }
 }
 

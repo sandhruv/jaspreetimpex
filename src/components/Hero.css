@@ -299,18 +299,62 @@
 }
 
 @media (max-width: 576px) {
+  .hero {
+    padding-top: 100px;
+    padding-bottom: 40px;
+  }
+
   .hero-title {
-    font-size: 2rem;
+    font-size: 1.8rem;
+  }
+
+  .hero-description {
+    font-size: 1rem;
+    margin-bottom: 25px;
+  }
+
+  .hero-badge {
+    font-size: 0.8rem;
+    padding: 6px 14px;
+  }
+
+  .hero-stats {
+    padding: 15px 20px;
+    gap: 15px;
+    flex-direction: column;
+    align-items: stretch;
+    text-align: center;
+  }
+
+  .stat-item {
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 8px 0;
+  }
+
+  .stat-item:not(:last-child) {
+    border-bottom: 1px solid rgba(255,255,255,0.1);
+  }
+
+  .stat-number {
+    font-size: 1.5rem;
+  }
+
+  .stat-label {
+    font-size: 0.8rem;
   }
 
   .hero-buttons {
     flex-direction: column;
+    gap: 12px;
   }
 
   .hero-buttons .btn-primary-custom,
   .hero-buttons .btn-secondary-custom {
     width: 100%;
     justify-content: center;
+    padding: 14px 20px;
   }
 
   .hero-scroll-indicator {

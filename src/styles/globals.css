@@ -239,8 +239,31 @@ ul {
   .section-title h2 {
     font-size: 1.8rem;
   }
+  .section-title {
+    margin-bottom: 40px;
+  }
   .section-title p {
     font-size: 1rem;
+  }
+  .btn-primary-custom,
+  .btn-secondary-custom {
+    padding: 12px 24px;
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 15px;
+  }
+  .container {
+    padding: 0 15px;
+  }
+  .section {
+    padding: 40px 0;
+  }
+  .section-title h2 {
+    font-size: 1.5rem;
   }
 }
 

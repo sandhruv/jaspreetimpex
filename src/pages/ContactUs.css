@@ -257,7 +257,27 @@
 
   .contact-form-wrapper,
   .contact-info-panel {
-    padding: 25px;
+    padding: 20px;
+  }
+
+  .contact-form-wrapper h2 {
+    font-size: 1.4rem;
+  }
+
+  .contact-info-panel h3 {
+    font-size: 1.3rem;
+  }
+
+  .map-placeholder {
+    height: 200px;
+  }
+
+  .page-hero h1 {
+    font-size: 1.8rem;
+  }
+
+  .page-hero p {
+    font-size: 0.95rem;
   }
 }
 

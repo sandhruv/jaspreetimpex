@@ -220,6 +220,16 @@
 
   .tab-btn {
     justify-content: center;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+
+  .services-content {
+    padding: 20px;
+  }
+
+  .content-info h3 {
+    font-size: 1.5rem;
   }
 
   .product-list {
@@ -228,6 +238,14 @@
 
   .visual-grid {
     grid-template-columns: 1fr;
+  }
+
+  .services-cta {
+    padding: 30px 20px;
+  }
+
+  .cta-content h3 {
+    font-size: 1.5rem;
   }
 }
 

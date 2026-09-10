@@ -155,6 +155,23 @@
 
   .stats-grid {
     grid-template-columns: 1fr;
+    gap: 0;
+  }
+
+  .stat-card {
+    padding: 20px;
+  }
+
+  .stat-number {
+    font-size: 2.2rem;
+  }
+
+  .page-hero {
+    padding: 130px 0 50px;
+  }
+
+  .page-hero h1 {
+    font-size: 1.8rem;
   }
 }
 
