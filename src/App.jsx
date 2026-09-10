@@ -1,0 +1,60 @@
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
+import { AuthProvider } from './context/AuthContext';
+import Header from './components/Header';
+import Footer from './components/Footer';
+import ProtectedRoute from './components/ProtectedRoute';
+import Home from './pages/Home';
+import AboutUs from './pages/AboutUs';
+import Products from './pages/Products';
+import ContactUs from './pages/ContactUs';
+import Photos from './pages/Photos';
+import Login from './pages/Login';
+import AdminDashboard from './pages/admin/AdminDashboard';
+import './styles/globals.css';
+
+function App() {
+  return (
+    <Router>
+      <AuthProvider>
+        <div className="App">
+          <Routes>
+            {/* Public Routes */}
+            <Route path="/login" element={<Login />} />
+            
+            {/* Admin Routes */}
+            <Route
+              path="/admin"
+              element={
+                <ProtectedRoute adminOnly>
+                  <AdminDashboard />
+                </ProtectedRoute>
+              }
+            />
+
+            {/* Website Routes with Header/Footer */}
+            <Route
+              path="/*"
+              element={
+                <>
+                  <Header />
+                  <main>
+                    <Routes>
+                      <Route path="/" element={<Home />} />
+                      <Route path="/about-us" element={<AboutUs />} />
+                      <Route path="/products" element={<Products />} />
+                      <Route path="/contact-us" element={<ContactUs />} />
+                      <Route path="/photos" element={<Photos />} />
+                    </Routes>
+                  </main>
+                  <Footer />
+                </>
+              }
+            />
+          </Routes>
+        </div>
+      </AuthProvider>
+    </Router>
+  );
+}
+
+export default App;
