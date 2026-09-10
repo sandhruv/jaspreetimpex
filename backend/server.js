@@ -10,8 +10,23 @@ const inquiryRoutes = require('./routes/inquiries');
 
 const app = express();
 
-// Middleware
-app.use(cors());
+// CORS
+const allowedOrigins = [
+  'https://www.jaspreetimpex.com',
+  'https://jaspreetimpex.com',
+  'http://localhost:5173'
+];
+
+app.use(cors({
+  origin: function (origin, callback) {
+    if (!origin || allowedOrigins.includes(origin)) {
+      callback(null, true);
+    } else {
+      callback(new Error('Not allowed by CORS'));
+    }
+  },
+  credentials: true
+}));
 app.use(express.json());
 
 // MongoDB Connection
