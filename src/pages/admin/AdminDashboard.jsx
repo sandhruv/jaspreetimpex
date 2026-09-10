@@ -10,7 +10,7 @@ import { useAuth } from '../../context/AuthContext';
 import axios from 'axios';
 import './AdminDashboard.css';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const API_URL = import.meta.env.VITE_API_URL || '/api';
 
 const AdminDashboard = () => {
   const [activeTab, setActiveTab] = useState('dashboard');

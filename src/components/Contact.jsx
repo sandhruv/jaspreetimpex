@@ -3,7 +3,7 @@ import { FiSend, FiPhone, FiMail, FiMapPin, FiClock } from 'react-icons/fi';
 import axios from 'axios';
 import './Contact.css';
 
-const API_URL = import.meta.env.VITE_API_URL || 'http://localhost:5000/api';
+const API_URL = import.meta.env.VITE_API_URL || '/api';
 
 const Contact = () => {
   const sectionRef = useRef(null);
