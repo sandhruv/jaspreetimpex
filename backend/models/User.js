@@ -65,8 +65,8 @@ UserSchema.pre('save', async function(next) {
 
 // Sign JWT and return
 UserSchema.methods.getSignedJwtToken = function() {
-  return jwt.sign({ id: this._id }, process.env.JWT_SECRET, {
-    expiresIn: process.env.JWT_EXPIRE
+  return jwt.sign({ id: this._id }, process.env.JWT_SECRET || 'jaspreet_impex_jwt_secret_key_2024', {
+    expiresIn: process.env.JWT_EXPIRE || '7d'
   });
 };
 
