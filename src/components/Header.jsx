@@ -1,8 +1,16 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { FiMenu, FiX, FiPhone, FiMail, FiChevronDown, FiUser, FiLogIn, FiLogOut, FiSettings } from 'react-icons/fi';
+import { FiMenu, FiX, FiPhone, FiMail, FiChevronDown, FiUser, FiLogIn, FiLogOut, FiSettings, FiHome, FiInfo, FiPackage, FiImage, FiMessageSquare } from 'react-icons/fi';
 import { useAuth } from '../context/AuthContext';
 import './Header.css';
+
+const navIcons = {
+  'Home': <FiHome />,
+  'About Us': <FiInfo />,
+  'Products': <FiPackage />,
+  'Photos': <FiImage />,
+  'Contact Us': <FiMessageSquare />,
+};
 
 const Header = () => {
   const [isScrolled, setIsScrolled] = useState(false);
@@ -13,16 +21,20 @@ const Header = () => {
   const { user, logout, isAdmin } = useAuth();
 
   useEffect(() => {
-    const handleScroll = () => {
-      setIsScrolled(window.scrollY > 50);
-    };
+    const handleScroll = () => setIsScrolled(window.scrollY > 50);
     window.addEventListener('scroll', handleScroll);
     return () => window.removeEventListener('scroll', handleScroll);
   }, []);
 
   useEffect(() => {
     setIsMobileMenuOpen(false);
+    setActiveDropdown(null);
   }, [location]);
+
+  useEffect(() => {
+    document.body.style.overflow = isMobileMenuOpen ? 'hidden' : '';
+    return () => { document.body.style.overflow = ''; };
+  }, [isMobileMenuOpen]);
 
   const navItems = [
     { name: 'Home', path: '/' },
@@ -48,22 +60,19 @@ const Header = () => {
     { name: 'Contact Us', path: '/contact-us' },
   ];
 
-  const handleDropdownEnter = (index) => {
-    setActiveDropdown(index);
-  };
-
-  const handleDropdownLeave = () => {
-    setActiveDropdown(null);
+  const handleDropdownToggle = (index) => {
+    setActiveDropdown(activeDropdown === index ? null : index);
   };
 
   const handleLogout = () => {
     logout();
     navigate('/');
+    setIsMobileMenuOpen(false);
   };
 
   return (
     <>
-      {/* Top Bar */}
+      {/* Top Bar - desktop only */}
       <div className="top-bar">
         <div className="container">
           <div className="top-bar-content">
@@ -95,14 +104,15 @@ const Header = () => {
               </div>
             </Link>
 
-            <nav className={`nav ${isMobileMenuOpen ? 'active' : ''}`}>
+            {/* Desktop Nav */}
+            <nav className="nav-desktop">
               <ul className="nav-list">
                 {navItems.map((item, index) => (
                   <li
                     key={item.name}
                     className={`nav-item ${item.children ? 'has-dropdown' : ''}`}
-                    onMouseEnter={() => item.children && handleDropdownEnter(index)}
-                    onMouseLeave={() => item.children && handleDropdownLeave()}
+                    onMouseEnter={() => item.children && setActiveDropdown(index)}
+                    onMouseLeave={() => item.children && setActiveDropdown(null)}
                   >
                     <Link
                       to={item.path}
@@ -115,9 +125,7 @@ const Header = () => {
                       <ul className="dropdown-menu">
                         {item.children.map((child) => (
                           <li key={child.name}>
-                            <Link to={child.path} className="dropdown-item">
-                              {child.name}
-                            </Link>
+                            <Link to={child.path} className="dropdown-item">{child.name}</Link>
                           </li>
                         ))}
                       </ul>
@@ -125,29 +133,10 @@ const Header = () => {
                   </li>
                 ))}
               </ul>
-
-              {/* Mobile Auth Buttons */}
-              <div className="mobile-login-wrapper">
-                {user ? (
-                  <>
-                    {isAdmin && (
-                      <Link to="/admin" className="btn-login-mobile">
-                        <FiSettings /> Admin Dashboard
-                      </Link>
-                    )}
-                    <button className="btn-logout-mobile" onClick={handleLogout}>
-                      <FiLogOut /> Logout
-                    </button>
-                  </>
-                ) : (
-                  <Link to="/login" className="btn-login-mobile">
-                    <FiLogIn /> Login
-                  </Link>
-                )}
-              </div>
             </nav>
 
-            <div className="header-actions">
+            {/* Desktop Actions */}
+            <div className="header-actions-desktop">
               {user ? (
                 <>
                   {isAdmin && (
@@ -167,24 +156,106 @@ const Header = () => {
               <Link to="/contact-us" className="btn-primary-custom header-cta">
                 Get a Quote
               </Link>
-              <button
-                className="mobile-menu-btn"
-                onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
-                aria-label="Toggle menu"
-              >
-                {isMobileMenuOpen ? <FiX /> : <FiMenu />}
-              </button>
             </div>
+
+            {/* Mobile Hamburger */}
+            <button
+              className="mobile-menu-btn"
+              onClick={() => setIsMobileMenuOpen(!isMobileMenuOpen)}
+              aria-label="Toggle menu"
+            >
+              {isMobileMenuOpen ? <FiX /> : <FiMenu />}
+            </button>
           </div>
         </div>
       </header>
 
-      {/* Mobile Menu Overlay */}
+      {/* Mobile Full-Screen Menu */}
+      <div className={`mobile-menu ${isMobileMenuOpen ? 'open' : ''}`}>
+        <div className="mobile-menu-header">
+          <Link to="/" className="logo" onClick={() => setIsMobileMenuOpen(false)}>
+            <div className="logo-icon">JI</div>
+            <div className="logo-text">
+              <span className="logo-name">Jaspreet Impex</span>
+              <span className="logo-tagline">GEE TEC</span>
+            </div>
+          </Link>
+          <button className="mobile-close-btn" onClick={() => setIsMobileMenuOpen(false)}>
+            <FiX />
+          </button>
+        </div>
+
+        <nav className="mobile-nav">
+          <ul className="mobile-nav-list">
+            {navItems.map((item, index) => (
+              <li key={item.name} className="mobile-nav-item">
+                {item.children ? (
+                  <>
+                    <button
+                      className={`mobile-nav-link ${activeDropdown === index ? 'active' : ''}`}
+                      onClick={() => handleDropdownToggle(index)}
+                    >
+                      <span className="mobile-nav-icon">{navIcons[item.name]}</span>
+                      <span>{item.name}</span>
+                      <FiChevronDown className={`mobile-chevron ${activeDropdown === index ? 'rotated' : ''}`} />
+                    </button>
+                    {activeDropdown === index && (
+                      <ul className="mobile-submenu">
+                        {item.children.map((child) => (
+                          <li key={child.name}>
+                            <Link to={child.path} className="mobile-submenu-link" onClick={() => setIsMobileMenuOpen(false)}>
+                              {child.name}
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </>
+                ) : (
+                  <Link
+                    to={item.path}
+                    className={`mobile-nav-link ${location.pathname === item.path ? 'active' : ''}`}
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    <span className="mobile-nav-icon">{navIcons[item.name]}</span>
+                    <span>{item.name}</span>
+                  </Link>
+                )}
+              </li>
+            ))}
+          </ul>
+        </nav>
+
+        <div className="mobile-menu-footer">
+          <Link to="/contact-us" className="btn-primary-custom mobile-cta" onClick={() => setIsMobileMenuOpen(false)}>
+            Get a Quote
+          </Link>
+          {user ? (
+            <>
+              {isAdmin && (
+                <Link to="/admin" className="btn-login-mobile-full" onClick={() => setIsMobileMenuOpen(false)}>
+                  <FiSettings /> Admin Dashboard
+                </Link>
+              )}
+              <button className="btn-logout-mobile-full" onClick={handleLogout}>
+                <FiLogOut /> Logout
+              </button>
+            </>
+          ) : (
+            <Link to="/login" className="btn-login-mobile-full" onClick={() => setIsMobileMenuOpen(false)}>
+              <FiLogIn /> Login
+            </Link>
+          )}
+          <div className="mobile-contact-info">
+            <a href="tel:+919876543210"><FiPhone /> +91 98765 43210</a>
+            <a href="mailto:info@jaspreetimpex.com"><FiMail /> info@jaspreetimpex.com</a>
+          </div>
+        </div>
+      </div>
+
+      {/* Overlay */}
       {isMobileMenuOpen && (
-        <div
-          className="mobile-overlay"
-          onClick={() => setIsMobileMenuOpen(false)}
-        />
+        <div className="mobile-overlay" onClick={() => setIsMobileMenuOpen(false)} />
       )}
     </>
   );
