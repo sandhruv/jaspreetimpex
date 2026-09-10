@@ -38,7 +38,18 @@ app.use((req, res, next) => {
   res.setHeader('X-XSS-Protection', '1; mode=block');
   res.setHeader('Referrer-Policy', 'strict-origin-when-cross-origin');
   res.setHeader('Permissions-Policy', 'camera=(), microphone=(), geolocation=()');
+  res.setHeader('Strict-Transport-Security', 'max-age=31536000; includeSubDomains');
   res.removeHeader('X-Powered-By');
+  next();
+});
+
+// Block sensitive paths
+app.use((req, res, next) => {
+  const blocked = ['.env', '.git', '.svn', '.htaccess', 'wp-admin', 'wp-login', '.htpasswd', 'config.json', 'docker-compose'];
+  const path = req.path.toLowerCase();
+  if (blocked.some(b => path.includes(b))) {
+    return res.status(404).json({ success: false, message: 'Not found' });
+  }
   next();
 });
 
