@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import { FiSend, FiPhone, FiMail, FiMapPin, FiClock, FiHome } from 'react-icons/fi';
 import axios from 'axios';
+import SEO from '../components/SEO';
 import './ContactUs.css';
 
 const API_URL = import.meta.env.VITE_API_URL || '/api';
@@ -84,6 +85,12 @@ const ContactUs = () => {
 
   return (
     <div className="contact-us-page">
+      <SEO
+        title="Contact Us - Jaspreet Impex | Get Quote for Automotive Components"
+        description="Contact Jaspreet Impex for automotive components inquiries. Phone: +91 98765 43210. Email: info@jaspreetimpex.com. Located in Phagwara, Punjab, India."
+        keywords="contact Jaspreet Impex, automotive components inquiry, GEE TEC contact, quote for brake parts"
+        url="https://jaspreetimpex.com/contact-us"
+      />
       {/* Hero Banner */}
       <section className="page-hero">
         <div className="page-hero-bg"></div>

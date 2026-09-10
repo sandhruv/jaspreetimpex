@@ -1,5 +1,6 @@
 import { useEffect } from 'react';
 import { FiAward, FiGlobe, FiPackage, FiShield, FiTarget, FiUsers } from 'react-icons/fi';
+import SEO from '../components/SEO';
 import './AboutUs.css';
 
 const AboutUs = () => {
@@ -41,6 +42,12 @@ const AboutUs = () => {
 
   return (
     <div className="about-us-page">
+      <SEO
+        title="About Us - Jaspreet Impex (GEE TEC) | ISO 9002 Certified Manufacturer"
+        description="Learn about Jaspreet Impex (GEE TEC) - trusted manufacturer of automotive components since 2009. ISO 9002 certified, serving 40+ countries with precision engineering."
+        keywords="about Jaspreet Impex, GEE TEC history, ISO 9002 manufacturer India, automotive components company Punjab"
+        url="https://jaspreetimpex.com/about-us"
+      />
       {/* Hero Banner */}
       <section className="page-hero">
         <div className="page-hero-bg"></div>

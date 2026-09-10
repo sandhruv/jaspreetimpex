@@ -1,4 +1,5 @@
 import { useEffect, useState } from 'react';
+import SEO from '../components/SEO';
 import './Photos.css';
 
 const Photos = () => {
@@ -98,6 +99,12 @@ const Photos = () => {
 
   return (
     <div className="photos-page">
+      <SEO
+        title="Photos - Jaspreet Impex | Manufacturing Facility & Products Gallery"
+        description="View photos of Jaspreet Impex manufacturing facility, automotive components, metal washers, and fasteners production in Phagwara, Punjab, India."
+        keywords="Jaspreet Impex photos, automotive components factory India, metal washers manufacturing, GEE TEC facility"
+        url="https://jaspreetimpex.com/photos"
+      />
       {/* Hero Banner */}
       <section className="page-hero">
         <div className="page-hero-bg"></div>

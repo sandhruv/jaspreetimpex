@@ -1,5 +1,6 @@
 import { useEffect, useState } from 'react';
 import { FiArrowRight, FiSettings, FiGrid, FiBox } from 'react-icons/fi';
+import SEO from '../components/SEO';
 import './Products.css';
 
 const Products = () => {
@@ -100,6 +101,12 @@ const Products = () => {
 
   return (
     <div className="products-page">
+      <SEO
+        title="Our Products - Jaspreet Impex | Brake Parts, Clutch Components, Metal Washers, Fasteners"
+        description="Explore our range of precision automotive components: brake parts, clutch components, engine parts, metal washers, and industrial fasteners. ISO certified, export quality."
+        keywords="brake components India, clutch parts manufacturer, metal washers supplier, industrial fasteners India, automotive spare parts"
+        url="https://jaspreetimpex.com/products"
+      />
       {/* Hero Banner */}
       <section className="page-hero">
         <div className="page-hero-bg"></div>
