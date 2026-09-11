@@ -27,7 +27,7 @@ const Products = () => {
           name: 'Sea Freight (FCL & LCL)',
           description: 'Full Container Load and Less than Container Load sea cargo services with efficient port coordination.',
           features: ['FCL & LCL', 'Global Ports', 'Container Shipping'],
-          image: 'https://images.unsplash.com/photo-1577988749525-e1c40a73f3f5?w=400&h=200&fit=crop',
+          image: 'https://images.unsplash.com/photo-1762141226718-a57447db19cb?w=400&h=200&fit=crop',
         },
         {
           name: 'Road Transportation',
