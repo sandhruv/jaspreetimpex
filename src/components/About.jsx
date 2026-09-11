@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { FiAward, FiGlobe, FiPackage, FiShield, FiArrowRight } from 'react-icons/fi';
+import { FiAward, FiGlobe, FiTruck, FiShield, FiArrowRight } from 'react-icons/fi';
 import './About.css';
 
 const About = () => {
@@ -27,23 +27,23 @@ const About = () => {
   const features = [
     {
       icon: <FiGlobe />,
-      title: 'Global Reach',
-      description: 'Exporting to 40+ countries worldwide with reliable supply chain solutions',
+      title: 'Global Network',
+      description: 'Serving 50+ countries with reliable freight forwarding and supply chain solutions',
     },
     {
       icon: <FiAward />,
-      title: 'ISO 9002 Certified',
-      description: 'International quality standards ensuring consistent product excellence',
+      title: 'Licensed & Certified',
+      description: 'Licensed customs house agent with MSME registration and industry certifications',
     },
     {
-      icon: <FiPackage />,
-      title: 'Modern Manufacturing',
-      description: 'State-of-the-art machinery and dedicated quality laboratories',
+      icon: <FiTruck />,
+      title: 'Multimodal Transport',
+      description: 'Comprehensive air, sea, and road transport solutions across India and globally',
     },
     {
       icon: <FiShield />,
-      title: 'Quality Assurance',
-      description: 'Multi-stage quality checks from raw materials to finished products',
+      title: 'Safety & Compliance',
+      description: 'Strict adherence to international safety regulations and DG handling protocols',
     },
   ];
 
@@ -54,32 +54,32 @@ const About = () => {
           <div className="about-content slide-in-left">
             <div className="section-badge">About Jaspreet Impex</div>
             <h2 className="about-title">
-              Heritage of Excellence in
-              <span className="highlight"> Automotive Manufacturing</span>
+              Your Trusted Partner for
+              <span className="highlight"> End-to-End Logistics</span>
             </h2>
             <p className="about-description">
-              Established through the vision of <strong>Late S. Kirpal Singh Sethi</strong>,
-              Jaspreet Impex (GEE TEC) started as a small unit in Phagwara, Punjab,
-              and has grown into a large-scale enterprise serving the global automotive industry.
+              Jaspreet Impex is a leading logistics company based in India, specializing in
+              providing efficient and reliable logistics solutions. With a strong presence
+              in the industry, we offer comprehensive services tailored to diverse business needs.
             </p>
             <p className="about-description">
-              As a <strong>100% export unit</strong>, we combine the advantages of low production
-              costs in India with international quality standards, delivering precision-engineered
-              components to over 40 countries worldwide.
+              Our commitment goes beyond simply moving goods. We deliver exceptional value through
+              cost-effective, technology-driven services while maintaining the highest standards
+              of professionalism, integrity, and safety.
             </p>
 
             <div className="about-highlights">
               <div className="highlight-item">
-                <span className="highlight-number">15+</span>
-                <span className="highlight-label">Years Experience</span>
+                <span className="highlight-number">10K+</span>
+                <span className="highlight-label">Shipments Delivered</span>
               </div>
               <div className="highlight-item">
-                <span className="highlight-number">40+</span>
+                <span className="highlight-number">50+</span>
                 <span className="highlight-label">Countries Served</span>
               </div>
               <div className="highlight-item">
-                <span className="highlight-number">100%</span>
-                <span className="highlight-label">Export Focus</span>
+                <span className="highlight-number">24/7</span>
+                <span className="highlight-label">Support Available</span>
               </div>
             </div>
 
@@ -90,15 +90,15 @@ const About = () => {
 
           <div className="about-visual slide-in-right">
             <div className="about-image-main">
-              <div className="image-placeholder">
-                <div className="placeholder-content">
-                  <span className="placeholder-icon">🏭</span>
-                  <span>Manufacturing Facility</span>
-                </div>
-              </div>
+              <img 
+                src="https://images.unsplash.com/photo-1553413077-190dd305871c?w=800&h=450&fit=crop" 
+                alt="Jaspreet Impex Logistics Operations" 
+                className="about-img"
+                loading="lazy"
+              />
             </div>
             <div className="experience-badge">
-              <span className="exp-number">15+</span>
+              <span className="exp-number">22+</span>
               <span className="exp-text">Years of Excellence</span>
             </div>
           </div>

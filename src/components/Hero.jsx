@@ -1,6 +1,6 @@
 import { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
-import { FiArrowRight, FiPlay } from 'react-icons/fi';
+import { FiArrowRight, FiPlay, FiAirplay, FiTruck, FiBox } from 'react-icons/fi';
 import './Hero.css';
 
 const Hero = () => {
@@ -16,6 +16,12 @@ const Hero = () => {
   return (
     <section className="hero" ref={heroRef}>
       <div className="hero-background">
+        <img 
+          src="https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1920&h=1080&fit=crop" 
+          alt="Logistics Operations" 
+          className="hero-bg-image"
+          loading="eager"
+        />
         <div className="hero-gradient"></div>
         <div className="hero-pattern"></div>
       </div>
@@ -24,43 +30,43 @@ const Hero = () => {
         <div className="hero-content">
           <div className="hero-badge">
             <span className="badge-dot"></span>
-            15+ Years of Excellence
+            Your Trusted Logistics Partner
           </div>
 
           <h1 className="hero-title">
-            Precision Engineered
-            <span className="highlight"> Automotive Components</span>
-            <br />& Metal Fasteners
+            Seamless Logistics
+            <span className="highlight"> Solutions Across India</span>
+            <br />& Beyond
           </h1>
 
           <p className="hero-description">
-            Delivering world-quality automotive components and metal fasteners to over 40 countries.
-            Combining Indian manufacturing excellence with international quality standards.
+            From freight forwarding to customs clearance, we deliver end-to-end logistics solutions
+            with precision, reliability, and global reach.
           </p>
 
           <div className="hero-stats">
             <div className="stat-item">
-              <span className="stat-number">40+</span>
+              <span className="stat-number">50+</span>
               <span className="stat-label">Countries Served</span>
             </div>
             <div className="stat-divider"></div>
             <div className="stat-item">
-              <span className="stat-number">15+</span>
-              <span className="stat-label">Years Experience</span>
+              <span className="stat-number">10K+</span>
+              <span className="stat-label">Shipments Delivered</span>
             </div>
             <div className="stat-divider"></div>
             <div className="stat-item">
-              <span className="stat-number">100%</span>
-              <span className="stat-label">Export Unit</span>
+              <span className="stat-number">99.8%</span>
+              <span className="stat-label">On-Time Delivery</span>
             </div>
           </div>
 
           <div className="hero-buttons">
-            <Link to="/products" className="btn-primary-custom">
-              Our Products <FiArrowRight />
+            <Link to="/services" className="btn-primary-custom">
+              Our Services <FiArrowRight />
             </Link>
             <Link to="/contact-us" className="btn-secondary-custom">
-              Get a Quote <FiArrowRight />
+              Request Quote <FiArrowRight />
             </Link>
           </div>
 
@@ -68,22 +74,22 @@ const Hero = () => {
             <button className="play-btn" aria-label="Play video">
               <FiPlay />
             </button>
-            <span>Watch Our Story</span>
+            <span>Watch How We Work</span>
           </div>
         </div>
 
         <div className="hero-visual">
           <div className="visual-card card-1">
-            <div className="card-icon">⚙️</div>
-            <span>ISO 9002</span>
+            <div className="card-icon"><FiAirplay /></div>
+            <span>Air Freight</span>
           </div>
           <div className="visual-card card-2">
-            <div className="card-icon">🌍</div>
-            <span>Global Export</span>
+            <div className="card-icon"><FiBox /></div>
+            <span>Sea Freight</span>
           </div>
           <div className="visual-card card-3">
-            <div className="card-icon">🏭</div>
-            <span>Made in India</span>
+            <div className="card-icon"><FiTruck /></div>
+            <span>Road Transport</span>
           </div>
         </div>
       </div>

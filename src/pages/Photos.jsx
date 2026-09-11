@@ -12,84 +12,95 @@ const Photos = () => {
   const photos = [
     {
       id: 1,
-      title: 'Manufacturing Facility',
+      title: 'Container Terminal',
       category: 'facility',
-      description: 'Our state-of-the-art manufacturing plant in Phagwara, Punjab',
+      description: 'Busy container terminal with gantry cranes loading freight containers to trucks',
+      image: 'https://images.unsplash.com/photo-1778441531349-b0c874287ebc?w=600&h=600&fit=crop',
     },
     {
       id: 2,
-      title: 'CNC Machining',
-      category: 'machinery',
-      description: 'Advanced CNC machines for precision component manufacturing',
+      title: 'Warehouse Operations',
+      category: 'facility',
+      description: 'Modern warehouse with organized shelving and forklift operations',
+      image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=600&fit=crop',
     },
     {
       id: 3,
-      title: 'Quality Lab',
-      category: 'quality',
-      description: 'Dedicated quality testing laboratory with modern equipment',
+      title: 'Cargo Aircraft',
+      category: 'machinery',
+      description: 'Air freight operations for urgent international shipments',
+      image: 'https://images.unsplash.com/photo-1767868278896-2ec1025d7424?w=600&h=600&fit=crop',
     },
     {
       id: 4,
-      title: 'Brake Components',
-      category: 'products',
-      description: 'Precision-engineered brake components for global automotive industry',
+      title: 'Container Ship',
+      category: 'facility',
+      description: 'Large cargo ship loaded with containers at port',
+      image: 'https://images.unsplash.com/photo-1774929108070-b60d3879e071?w=600&h=600&fit=crop',
     },
     {
       id: 5,
-      title: 'Metal Washers',
-      category: 'products',
-      description: 'Various types of metal washers manufactured to international standards',
+      title: 'Customs Documentation',
+      category: 'quality',
+      description: 'Customs clearance documentation and compliance processing',
+      image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=600&fit=crop',
     },
     {
       id: 6,
-      title: 'Assembly Line',
-      category: 'facility',
-      description: 'Automated assembly line for efficient production',
+      title: 'Forklift Operations',
+      category: 'machinery',
+      description: 'Forklift moving cargo at distribution warehouse',
+      image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?w=600&h=600&fit=crop',
     },
     {
       id: 7,
-      title: 'Testing Equipment',
-      category: 'quality',
-      description: 'Advanced testing equipment for quality assurance',
+      title: 'Truck Fleet',
+      category: 'machinery',
+      description: 'Fleet of trucks for road transportation across India',
+      image: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=600&h=600&fit=crop',
     },
     {
       id: 8,
-      title: 'Clutch Parts',
-      category: 'products',
-      description: 'High-performance clutch components',
+      title: 'Cargo Loading',
+      category: 'facility',
+      description: 'Efficient cargo loading and unloading at port',
+      image: 'https://images.unsplash.com/photo-1759389003674-bbc78848a532?w=600&h=600&fit=crop',
     },
     {
       id: 9,
-      title: 'Warehouse',
-      category: 'facility',
-      description: 'Organized warehouse for inventory management',
+      title: 'GPS Tracking',
+      category: 'quality',
+      description: 'Real-time cargo tracking and monitoring system',
+      image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=600&fit=crop',
     },
     {
       id: 10,
-      title: 'Lathe Machine',
-      category: 'machinery',
-      description: 'Precision lathe machines for component turning',
+      title: 'Distribution Hub',
+      category: 'facility',
+      description: 'Last-mile delivery distribution center',
+      image: 'https://images.unsplash.com/photo-1565891741441-64926e441838?w=600&h=600&fit=crop',
     },
     {
       id: 11,
-      title: 'Engine Components',
-      category: 'products',
-      description: 'Critical engine parts manufactured to exact specifications',
+      title: 'Safety Equipment',
+      category: 'quality',
+      description: 'Safety protocols and equipment for DG shipment handling',
+      image: 'https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=600&fit=crop',
     },
     {
       id: 12,
-      title: 'Quality Inspection',
-      category: 'quality',
-      description: 'Final quality inspection before dispatch',
+      title: 'Port Operations',
+      category: 'facility',
+      description: 'Container port with cranes and maritime operations',
+      image: 'https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=600&h=600&fit=crop',
     },
   ];
 
   const filters = [
     { id: 'all', name: 'All Photos' },
-    { id: 'facility', name: 'Facility' },
-    { id: 'machinery', name: 'Machinery' },
-    { id: 'products', name: 'Products' },
-    { id: 'quality', name: 'Quality' },
+    { id: 'facility', name: 'Facilities' },
+    { id: 'machinery', name: 'Equipment' },
+    { id: 'quality', name: 'Operations' },
   ];
 
   const filteredPhotos =
@@ -100,17 +111,17 @@ const Photos = () => {
   return (
     <div className="photos-page">
       <SEO
-        title="Photos - Jaspreet Impex | Manufacturing Facility & Products Gallery"
-        description="View photos of Jaspreet Impex manufacturing facility, automotive components, metal washers, and fasteners production in Phagwara, Punjab, India."
-        keywords="Jaspreet Impex photos, automotive components factory India, metal washers manufacturing, GEE TEC facility"
+        title="Photos - Jaspreet Impex | Logistics Operations & Facilities Gallery"
+        description="View photos of Jaspreet Impex logistics operations, warehouse facilities, container terminal, cargo ship, and fleet management in India."
+        keywords="Jaspreet Impex photos, logistics operations India, warehouse facility, container terminal, cargo ship, freight forwarding"
         url="https://jaspreetimpex.com/photos"
       />
       {/* Hero Banner */}
       <section className="page-hero">
         <div className="page-hero-bg"></div>
         <div className="container">
-          <h1>Our Facility</h1>
-          <p>Take a look at our manufacturing facility and products</p>
+          <h1>Our Operations</h1>
+          <p>Take a look at our logistics facilities and operations</p>
         </div>
       </section>
 
@@ -119,7 +130,7 @@ const Photos = () => {
         <div className="container">
           <div className="section-title">
             <h2>Photo Gallery</h2>
-            <p>Explore our manufacturing capabilities and product range</p>
+            <p>Explore our logistics capabilities and global operations</p>
           </div>
 
           <div className="filter-tabs">
@@ -137,11 +148,12 @@ const Photos = () => {
           <div className="photos-grid">
             {filteredPhotos.map((photo) => (
               <div key={photo.id} className="photo-card">
-                <div className="photo-placeholder">
-                  <span className="photo-number">
-                    {String(photo.id).padStart(2, '0')}
-                  </span>
-                </div>
+                <img 
+                  src={photo.image} 
+                  alt={photo.title}
+                  className="photo-img"
+                  loading="lazy"
+                />
                 <div className="photo-overlay">
                   <h4>{photo.title}</h4>
                   <p>{photo.description}</p>
@@ -157,20 +169,20 @@ const Photos = () => {
         <div className="container">
           <div className="stats-grid">
             <div className="stat-card">
-              <span className="stat-number">15+</span>
+              <span className="stat-number">22+</span>
               <span className="stat-label">Years Experience</span>
             </div>
             <div className="stat-card">
-              <span className="stat-number">40+</span>
+              <span className="stat-number">50+</span>
               <span className="stat-label">Countries Served</span>
             </div>
             <div className="stat-card">
-              <span className="stat-number">100+</span>
-              <span className="stat-label">Products</span>
+              <span className="stat-number">10K+</span>
+              <span className="stat-label">Shipments Delivered</span>
             </div>
             <div className="stat-card">
-              <span className="stat-number">100%</span>
-              <span className="stat-label">Quality Tested</span>
+              <span className="stat-number">99.8%</span>
+              <span className="stat-label">On-Time Delivery</span>
             </div>
           </div>
         </div>

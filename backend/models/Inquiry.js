@@ -27,10 +27,13 @@ const InquirySchema = new mongoose.Schema({
     trim: true
   },
   product: {
-    type: String,
-    required: [true, 'Please select a product']
+    type: String
   },
-  quantity: {
+  service: {
+    type: String,
+    required: [true, 'Please select a service']
+  },
+  cargoType: {
     type: String,
     trim: true
   },

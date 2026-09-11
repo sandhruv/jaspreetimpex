@@ -1,10 +1,10 @@
 import { useEffect, useState } from 'react';
-import { FiArrowRight, FiSettings, FiGrid, FiBox } from 'react-icons/fi';
+import { FiArrowRight, FiTruck, FiGlobe, FiShield, FiBox } from 'react-icons/fi';
 import SEO from '../components/SEO';
 import './Products.css';
 
 const Products = () => {
-  const [activeCategory, setActiveCategory] = useState('automotive');
+  const [activeCategory, setActiveCategory] = useState('freight');
 
   useEffect(() => {
     window.scrollTo(0, 0);
@@ -12,86 +12,130 @@ const Products = () => {
 
   const categories = [
     {
-      id: 'automotive',
-      name: 'Automotive Components',
-      icon: <FiSettings />,
-      description: 'Precision-engineered automotive components manufactured to meet international quality standards for global automotive industry.',
-      products: [
+      id: 'freight',
+      name: 'Freight Forwarding',
+      icon: <FiGlobe />,
+      description: 'International freight forwarding services with seamless coordination across air, sea, and road transport for global shipping needs.',
+      services: [
         {
-          name: 'Brake Components',
-          description: 'High-performance brake parts including pads, discs, and calipers designed for safety and durability.',
-          features: ['ISO 9002 Certified', 'Heat Resistant', 'Long Lifespan'],
+          name: 'Air Freight',
+          description: 'Fast and secure air cargo services for urgent international shipments and high-value goods.',
+          features: ['Express Handling', 'Global Air Cargo', 'Real-Time Tracking'],
+          image: 'https://images.unsplash.com/photo-1436491865332-7a61a109db05?w=400&h=200&fit=crop',
         },
         {
-          name: 'Clutch Parts',
-          description: 'Precision-machined clutch components ensuring smooth transmission operation.',
-          features: ['Precision Machined', 'Wear Resistant', 'OEM Specifications'],
+          name: 'Sea Freight (FCL & LCL)',
+          description: 'Full Container Load and Less than Container Load sea cargo services with efficient port coordination.',
+          features: ['FCL & LCL', 'Global Ports', 'Container Shipping'],
+          image: 'https://images.unsplash.com/photo-1494412574643-ff11b0a5eb19?w=400&h=200&fit=crop',
         },
         {
-          name: 'Engine Components',
-          description: 'Critical engine parts manufactured with exact specifications for optimal performance.',
-          features: ['High Precision', 'Temperature Stable', 'Premium Quality'],
+          name: 'Road Transportation',
+          description: 'Reliable domestic and cross-border transportation solutions for manufacturers and exporters.',
+          features: ['Pan India', 'Safe Delivery', 'Fast Transit'],
+          image: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=400&h=200&fit=crop',
         },
         {
-          name: 'Suspension Parts',
-          description: 'Durable suspension components designed for comfort and vehicle stability.',
-          features: ['Heavy Duty', 'Corrosion Resistant', 'Tested Quality'],
-        },
-      ],
-    },
-    {
-      id: 'washers',
-      name: 'Metal Washers',
-      icon: <FiGrid />,
-      description: 'High-quality metal washers in various sizes and specifications for industrial and automotive applications.',
-      products: [
-        {
-          name: 'Flat Washers',
-          description: 'Standard flat washers for load distribution and surface protection.',
-          features: ['Various Sizes', 'Zinc Plated', 'Stainless Options'],
-        },
-        {
-          name: 'Spring Washers',
-          description: 'Lock washers designed to prevent loosening under vibration.',
-          features: ['Vibration Proof', 'High Tension', 'Durable'],
-        },
-        {
-          name: 'Lock Washers',
-          description: 'Specialized washers for secure fastening in critical applications.',
-          features: ['Secure Lock', 'Heavy Duty', 'Reliable'],
-        },
-        {
-          name: 'Custom Washers',
-          description: 'Manufactured to customer specifications for unique applications.',
-          features: ['Custom Sizes', 'Special Materials', 'Bulk Orders'],
+          name: 'Multimodal Transport',
+          description: 'Integrated transport solutions combining multiple modes for optimal efficiency.',
+          features: ['Integrated Solutions', 'Cost Effective', 'Flexible Routing'],
+          image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=200&fit=crop',
         },
       ],
     },
     {
-      id: 'other',
-      name: 'Other Products',
+      id: 'customs',
+      name: 'Customs Clearance',
+      icon: <FiShield />,
+      description: 'Smooth customs clearance services ensuring compliance with Indian import/export regulations and minimizing delays.',
+      services: [
+        {
+          name: 'Import Clearance',
+          description: 'Efficient handling of all import documentation and regulatory requirements.',
+          features: ['Documentation', 'Duty Optimization', 'Fast Processing'],
+          image: 'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=200&fit=crop',
+        },
+        {
+          name: 'Export Clearance',
+          description: 'Streamlined export processes ensuring compliance and timely shipment.',
+          features: ['Export Licenses', 'Compliance', 'Quick Turnaround'],
+          image: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=200&fit=crop',
+        },
+        {
+          name: 'Documentation Handling',
+          description: 'Complete management of all customs documentation and paperwork.',
+          features: ['Digital Documentation', 'Accuracy', 'Expert Handling'],
+          image: 'https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=400&h=200&fit=crop',
+        },
+        {
+          name: 'Regulatory Compliance',
+          description: 'Ensuring all shipments meet international trade regulations and standards.',
+          features: ['Legal Compliance', 'Risk Management', 'Audit Support'],
+          image: 'https://images.unsplash.com/photo-1735020886196-bed638cc1809?w=400&h=200&fit=crop',
+        },
+      ],
+    },
+    {
+      id: 'warehouse',
+      name: 'Warehousing & Distribution',
       icon: <FiBox />,
-      description: 'Diverse range of precision-engineered products tailored to specific industry requirements.',
-      products: [
+      description: 'Strategically located warehouses offering flexible storage, detailed inventory management, and streamlined distribution.',
+      services: [
         {
-          name: 'Metal Fasteners',
-          description: 'Complete range of bolts, nuts, and screws for various applications.',
-          features: ['Multiple Grades', 'Corrosion Resistant', 'ISO Certified'],
+          name: 'Storage Solutions',
+          description: 'Flexible warehouse space tailored to your inventory requirements.',
+          features: ['Secure Storage', 'Climate Control', 'Scalable Space'],
+          image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?w=400&h=200&fit=crop',
         },
         {
-          name: 'Custom Machined Parts',
-          description: 'CNC machined components manufactured to exact customer specifications.',
-          features: ['CNC Precision', 'Custom Designs', 'Quick Turnaround'],
+          name: 'Inventory Management',
+          description: 'Advanced systems for real-time inventory tracking and management.',
+          features: ['Real-Time Updates', 'Barcode System', 'Reports'],
+          image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=200&fit=crop',
         },
         {
-          name: 'Industrial Components',
-          description: 'General industrial parts and components for manufacturing sector.',
-          features: ['Bulk Supply', 'Quality Tested', 'Competitive Prices'],
+          name: 'Order Fulfillment',
+          description: 'Efficient pick, pack, and ship operations for e-commerce and retail.',
+          features: ['Fast Processing', 'Accuracy', 'Custom Packaging'],
+          image: 'https://images.unsplash.com/photo-1565891741441-64926e441838?w=400&h=200&fit=crop',
         },
         {
-          name: 'Specialty Items',
-          description: 'Specialized products designed for specific industry needs.',
-          features: ['Unique Designs', 'Expert Engineering', 'Tailored Solutions'],
+          name: 'Last-Mile Delivery',
+          description: 'Reliable doorstep delivery across India with tracking capabilities.',
+          features: ['Door Delivery', 'Tracking', 'Same Day Options'],
+          image: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=400&h=200&fit=crop',
+        },
+      ],
+    },
+    {
+      id: 'specialized',
+      name: 'Specialized Logistics',
+      icon: <FiTruck />,
+      description: 'Expert handling of hazardous materials, oversized cargo, and specialized logistics solutions with strict compliance to safety regulations.',
+      services: [
+        {
+          name: 'DG Shipment Handling',
+          description: 'Specialized handling of dangerous goods with strict compliance to IMCO regulations.',
+          features: ['IMCO Classes', 'Safety Protocols', 'Certified Handlers'],
+          image: 'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=400&h=200&fit=crop',
+        },
+        {
+          name: 'Project Cargo',
+          description: 'Complex logistics for oversized, heavy, or sensitive cargo with route surveys.',
+          features: ['Route Planning', 'Heavy Lift', 'Specialized Equipment'],
+          image: 'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=200&fit=crop',
+        },
+        {
+          name: 'E-commerce Logistics',
+          description: 'Tailored solutions for online businesses including fulfillment and returns.',
+          features: ['Order Processing', 'Returns Management', 'Integration'],
+          image: 'https://images.unsplash.com/photo-1742858492775-8f58f645aa12?w=400&h=200&fit=crop',
+        },
+        {
+          name: 'Supply Chain Management',
+          description: 'End-to-end supply chain optimization and management services.',
+          features: ['Consulting', 'Optimization', 'Technology Driven'],
+          image: 'https://images.unsplash.com/photo-1553413077-190dd305871c?w=400&h=200&fit=crop',
         },
       ],
     },
@@ -102,26 +146,26 @@ const Products = () => {
   return (
     <div className="products-page">
       <SEO
-        title="Our Products - Jaspreet Impex | Brake Parts, Clutch Components, Metal Washers, Fasteners"
-        description="Explore our range of precision automotive components: brake parts, clutch components, engine parts, metal washers, and industrial fasteners. ISO certified, export quality."
-        keywords="brake components India, clutch parts manufacturer, metal washers supplier, industrial fasteners India, automotive spare parts"
-        url="https://jaspreetimpex.com/products"
+        title="Our Services - Jaspreet Impex | Freight Forwarding, Customs Clearance, Warehousing"
+        description="Explore our comprehensive logistics services: freight forwarding, customs clearance, warehousing, DG shipment handling, and supply chain management."
+        keywords="freight forwarding India, customs clearance services, warehousing solutions, DG shipment handling, logistics services"
+        url="https://jaspreetimpex.com/services"
       />
       {/* Hero Banner */}
       <section className="page-hero">
         <div className="page-hero-bg"></div>
         <div className="container">
-          <h1>Our Products</h1>
-          <p>Precision-engineered automotive components and metal fasteners</p>
+          <h1>Our Services</h1>
+          <p>Comprehensive logistics solutions for your business needs</p>
         </div>
       </section>
 
-      {/* Products Overview */}
+      {/* Services Overview */}
       <section className="products-overview section">
         <div className="container">
           <div className="section-title">
-            <h2>Product Categories</h2>
-            <p>Comprehensive range of quality products for global automotive industry</p>
+            <h2>Service Categories</h2>
+            <p>End-to-end logistics solutions across India and globally</p>
           </div>
 
           <div className="category-tabs">
@@ -142,25 +186,28 @@ const Products = () => {
           </div>
 
           <div className="products-grid">
-            {activeCat.products.map((product, index) => (
+            {activeCat.services.map((service, index) => (
               <div key={index} className="product-card">
                 <div className="product-image">
-                  <div className="image-placeholder">
-                    <span className="product-number">{String(index + 1).padStart(2, '0')}</span>
-                  </div>
+                  <img 
+                    src={service.image} 
+                    alt={service.name}
+                    className="product-img"
+                    loading="lazy"
+                  />
                 </div>
                 <div className="product-content">
-                  <h3>{product.name}</h3>
-                  <p>{product.description}</p>
+                  <h3>{service.name}</h3>
+                  <p>{service.description}</p>
                   <div className="product-features">
-                    {product.features.map((feature, i) => (
+                    {service.features.map((feature, i) => (
                       <span key={i} className="feature-tag">
                         {feature}
                       </span>
                     ))}
                   </div>
                   <a href="/contact-us" className="product-link">
-                    Inquire Now <FiArrowRight />
+                    Request Quote <FiArrowRight />
                   </a>
                 </div>
               </div>
@@ -169,29 +216,29 @@ const Products = () => {
         </div>
       </section>
 
-      {/* Manufacturing */}
+      {/* Network */}
       <section className="manufacturing-section section">
         <div className="container">
           <div className="manufacturing-grid">
             <div className="manufacturing-content">
-              <div className="section-badge">Manufacturing Excellence</div>
-              <h2>State-of-the-Art Production Facility</h2>
+              <div className="section-badge">Our Network</div>
+              <h2>Pan-India Logistics Network</h2>
               <p>
-                Our manufacturing base features modern machinery, state-of-the-art
-                testing equipment, and dedicated quality laboratories in India.
+                Our extensive logistics network covers all major cities and industrial
+                hubs across India, ensuring seamless cargo movement.
               </p>
               <ul className="manufacturing-features">
-                <li>Modern CNC machinery for precision manufacturing</li>
-                <li>Dedicated quality testing laboratories</li>
-                <li>Advanced monitoring equipment</li>
-                <li>Skilled workforce with years of experience</li>
-                <li>Compliance with international standards</li>
+                <li>Major cities coverage across India</li>
+                <li>Strategic warehouse locations</li>
+                <li>Multi-modal transport connectivity</li>
+                <li>Global shipping partnerships</li>
+                <li>Advanced tracking technology</li>
               </ul>
             </div>
             <div className="manufacturing-visual">
               <div className="visual-placeholder">
-                <span className="visual-icon">⚙️</span>
-                <span>Advanced Manufacturing</span>
+                <span className="visual-icon">🚛</span>
+                <span>Global Logistics Network</span>
               </div>
             </div>
           </div>
@@ -202,8 +249,8 @@ const Products = () => {
       <section className="products-cta section">
         <div className="container">
           <div className="cta-box">
-            <h2>Need Custom Specifications?</h2>
-            <p>We manufacture products tailored to your specific requirements with international quality standards.</p>
+            <h2>Need a Custom Logistics Solution?</h2>
+            <p>We tailor our services to meet your unique shipping and supply chain requirements across India and globally.</p>
             <a href="/contact-us" className="btn-primary-custom">
               Contact Us <FiArrowRight />
             </a>

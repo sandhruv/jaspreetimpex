@@ -42,9 +42,9 @@ const Home = () => {
   return (
     <>
       <SEO
-        title="Jaspreet Impex (GEE TEC) | Automotive Components & Metal Fasteners Manufacturer India"
-        description="Leading manufacturer and exporter of precision automotive components, brake parts, clutch parts, metal washers, and fasteners from India. 15+ years experience, ISO 9002 certified."
-        keywords="automotive components manufacturer India, metal fasteners exporter, brake parts India, clutch components, metal washers, GEE TEC"
+        title="Jaspreet Impex | Logistics Solutions - Freight Forwarding, Customs Clearance & Supply Chain"
+        description="Leading logistics company in India offering freight forwarding, customs clearance, warehousing, DG shipment handling, and end-to-end supply chain solutions."
+        keywords="logistics company India, freight forwarding, customs clearance, supply chain management, DG shipment handling, warehousing, e-commerce logistics"
         url="https://jaspreetimpex.com"
       />
       {settings.hero && <Hero />}

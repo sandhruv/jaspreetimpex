@@ -1,13 +1,13 @@
 import { useState, useEffect } from 'react';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-import { FiMenu, FiX, FiPhone, FiMail, FiChevronDown, FiUser, FiLogIn, FiLogOut, FiSettings, FiHome, FiInfo, FiPackage, FiImage, FiMessageSquare } from 'react-icons/fi';
+import { FiMenu, FiX, FiPhone, FiMail, FiChevronDown, FiUser, FiLogIn, FiLogOut, FiSettings, FiHome, FiInfo, FiTruck, FiImage, FiMessageSquare } from 'react-icons/fi';
 import { useAuth } from '../context/AuthContext';
 import './Header.css';
 
 const navIcons = {
   'Home': <FiHome />,
   'About Us': <FiInfo />,
-  'Products': <FiPackage />,
+  'Services': <FiTruck />,
   'Photos': <FiImage />,
   'Contact Us': <FiMessageSquare />,
 };
@@ -43,17 +43,18 @@ const Header = () => {
       path: '/about-us',
       children: [
         { name: 'Our Story', path: '/about-us#story' },
-        { name: 'Quality Policy', path: '/about-us#quality' },
-        { name: 'Our Team', path: '/about-us#team' },
+        { name: 'Our Mission', path: '/about-us#mission' },
+        { name: 'Our Network', path: '/about-us#network' },
       ],
     },
     {
-      name: 'Products',
-      path: '/products',
+      name: 'Services',
+      path: '/services',
       children: [
-        { name: 'Automotive Components', path: '/products#automotive' },
-        { name: 'Metal Washers', path: '/products#washers' },
-        { name: 'Other Products', path: '/products#other' },
+        { name: 'Freight Forwarding', path: '/services#freight' },
+        { name: 'Customs Clearance', path: '/services#customs' },
+        { name: 'Warehousing', path: '/services#warehouse' },
+        { name: 'Specialized Logistics', path: '/services#specialized' },
       ],
     },
     { name: 'Photos', path: '/photos' },
@@ -77,16 +78,16 @@ const Header = () => {
         <div className="container">
           <div className="top-bar-content">
             <div className="top-bar-left">
-              <a href="tel:+919876543210" className="top-bar-item">
+              <span className="top-bar-item">
                 <FiPhone /> +91 98765 43210
-              </a>
-              <a href="mailto:info@jaspreetimpex.com" className="top-bar-item">
+              </span>
+              <span className="top-bar-item">
                 <FiMail /> info@jaspreetimpex.com
-              </a>
+              </span>
             </div>
             <div className="top-bar-right">
-              <span className="top-bar-item">GST: 03ATPPK3375A1ZX</span>
               <span className="top-bar-item">ISO 9002 Certified</span>
+              <span className="top-bar-item">GST: 03ATPPK3375A1ZX</span>
             </div>
           </div>
         </div>
@@ -100,7 +101,7 @@ const Header = () => {
               <div className="logo-icon">JI</div>
               <div className="logo-text">
                 <span className="logo-name">Jaspreet Impex</span>
-                <span className="logo-tagline">GEE TEC</span>
+                <span className="logo-tagline">LOGISTICS</span>
               </div>
             </Link>
 
@@ -154,7 +155,7 @@ const Header = () => {
                 </Link>
               )}
               <Link to="/contact-us" className="btn-primary-custom header-cta">
-                Get a Quote
+                Request Quote
               </Link>
             </div>
 
@@ -177,7 +178,7 @@ const Header = () => {
             <div className="logo-icon">JI</div>
             <div className="logo-text">
               <span className="logo-name">Jaspreet Impex</span>
-              <span className="logo-tagline">GEE TEC</span>
+              <span className="logo-tagline">LOGISTICS</span>
             </div>
           </Link>
           <button className="mobile-close-btn" onClick={() => setIsMobileMenuOpen(false)}>
@@ -228,7 +229,7 @@ const Header = () => {
 
         <div className="mobile-menu-footer">
           <Link to="/contact-us" className="btn-primary-custom mobile-cta" onClick={() => setIsMobileMenuOpen(false)}>
-            Get a Quote
+            Request Quote
           </Link>
           {user ? (
             <>
@@ -247,8 +248,8 @@ const Header = () => {
             </Link>
           )}
           <div className="mobile-contact-info">
-            <a href="tel:+919876543210"><FiPhone /> +91 98765 43210</a>
-            <a href="mailto:info@jaspreetimpex.com"><FiMail /> info@jaspreetimpex.com</a>
+            <span><FiPhone /> +91 98765 43210</span>
+            <span><FiMail /> info@jaspreetimpex.com</span>
           </div>
         </div>
       </div>

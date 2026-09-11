@@ -1,5 +1,5 @@
 import { Link } from 'react-router-dom';
-import { FiPhone, FiMail, FiMapPin, FiArrowUp, FiFacebook, FiLinkedin, FiTwitter } from 'react-icons/fi';
+import { FiArrowUp, FiFacebook, FiLinkedin, FiTwitter } from 'react-icons/fi';
 import './Footer.css';
 
 const Footer = () => {
@@ -10,17 +10,17 @@ const Footer = () => {
   const quickLinks = [
     { name: 'Home', path: '/' },
     { name: 'About Us', path: '/about-us' },
-    { name: 'Products', path: '/products' },
+    { name: 'Services', path: '/services' },
     { name: 'Photos', path: '/photos' },
     { name: 'Contact Us', path: '/contact-us' },
   ];
 
-  const products = [
-    'Automotive Components',
-    'Metal Washers',
-    'Metal Fasteners',
-    'Custom Parts',
-    'Industrial Components',
+  const services = [
+    'Freight Forwarding',
+    'Customs Clearance',
+    'Warehousing & Distribution',
+    'DG Shipment Handling',
+    'E-commerce Logistics',
   ];
 
   return (
@@ -30,25 +30,24 @@ const Footer = () => {
           <div className="footer-grid">
             <div className="footer-brand">
               <Link to="/" className="footer-logo">
-                <div className="logo-icon">JT</div>
+                <div className="logo-icon">JI</div>
                 <div className="logo-text">
                   <span className="logo-name">Jaspreet Impex</span>
-                  <span className="logo-tagline">GEE TEC</span>
+                  <span className="logo-tagline">LOGISTICS</span>
                 </div>
               </Link>
               <p className="footer-description">
-                Established through the vision of Late S. Kirpal Singh Sethi,
-                delivering world-quality automotive components and metal fasteners
-                to over 40 countries worldwide.
+                Your trusted partner for end-to-end logistics solutions across India and globally.
+                Specializing in freight forwarding, customs clearance, and supply chain management.
               </p>
               <div className="social-links">
-                <a href="#" className="social-link" aria-label="Facebook">
+                <a href="https://facebook.com" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Facebook">
                   <FiFacebook />
                 </a>
-                <a href="#" className="social-link" aria-label="LinkedIn">
+                <a href="https://linkedin.com" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="LinkedIn">
                   <FiLinkedin />
                 </a>
-                <a href="#" className="social-link" aria-label="Twitter">
+                <a href="https://twitter.com" target="_blank" rel="noopener noreferrer" className="social-link" aria-label="Twitter">
                   <FiTwitter />
                 </a>
               </div>
@@ -66,11 +65,11 @@ const Footer = () => {
             </div>
 
             <div className="footer-products">
-              <h4>Our Products</h4>
+              <h4>Our Services</h4>
               <ul>
-                {products.map((product) => (
-                  <li key={product}>
-                    <Link to="/products">{product}</Link>
+                {services.map((service) => (
+                  <li key={service}>
+                    <Link to="/services">{service}</Link>
                   </li>
                 ))}
               </ul>
@@ -80,24 +79,21 @@ const Footer = () => {
               <h4>Contact Info</h4>
               <div className="contact-items">
                 <div className="contact-item">
-                  <FiMapPin className="contact-icon" />
-                  <span>Phagwara, Kapurthala, Punjab, India</span>
+                  <span>📍 Location: Phagwara, Punjab, India</span>
                 </div>
                 <div className="contact-item">
-                  <FiPhone className="contact-icon" />
-                  <span>+91 98765 43210</span>
+                  <span>📞 +91 98765 43210</span>
                 </div>
                 <div className="contact-item">
-                  <FiMail className="contact-icon" />
-                  <span>info@jaspreetimpex.com</span>
+                  <span>✉️ info@jaspreetimpex.com</span>
                 </div>
               </div>
 
               <div className="certification-badge">
                 <span className="cert-icon">🏅</span>
                 <div className="cert-info">
-                  <span className="cert-title">ISO 9002</span>
-                  <span className="cert-text">Certified Company</span>
+                  <span className="cert-title">ISO 9002 Certified</span>
+                  <span className="cert-text">GST: 03ATPPK3375A1ZX</span>
                 </div>
               </div>
             </div>
@@ -109,12 +105,16 @@ const Footer = () => {
         <div className="container">
           <div className="footer-bottom-content">
             <p className="copyright">
-              © {new Date().getFullYear()} Jaspreet Impex (GEE TEC). All rights reserved.
+              © {new Date().getFullYear()} Jaspreet Impex. All rights reserved.
             </p>
             <div className="footer-bottom-links">
-              <span>GST: 03ATPPK3375A1ZX</span>
+              <Link to="/privacy-policy">Privacy Policy</Link>
               <span className="separator">|</span>
-              <span>100% Export Unit</span>
+              <Link to="/terms-of-service">Terms of Service</Link>
+              <span className="separator">|</span>
+              <span>Licensed Customs House Agent</span>
+              <span className="separator">|</span>
+              <span>ISO 9002 Certified</span>
             </div>
           </div>
         </div>

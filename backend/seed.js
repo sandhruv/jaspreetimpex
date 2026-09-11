@@ -27,40 +27,40 @@ const seedData = async () => {
     if (productCount === 0) {
       await Product.insertMany([
         {
-          name: 'Brake Components',
-          category: 'automotive',
-          description: 'High-performance brake parts including pads, discs, and calipers designed for safety and durability.',
-          features: ['ISO 9002 Certified', 'Heat Resistant', 'Long Lifespan']
+          name: 'Air Freight',
+          category: 'freight',
+          description: 'Fast and secure air cargo services for urgent international shipments and high-value goods.',
+          features: ['Express Handling', 'Global Air Cargo', 'Real-Time Tracking']
         },
         {
-          name: 'Clutch Parts',
-          category: 'automotive',
-          description: 'Precision-machined clutch components ensuring smooth transmission operation.',
-          features: ['Precision Machined', 'Wear Resistant', 'OEM Specifications']
+          name: 'Sea Freight (FCL & LCL)',
+          category: 'freight',
+          description: 'Full Container Load and Less than Container Load sea cargo services with efficient port coordination.',
+          features: ['FCL & LCL', 'Global Ports', 'Container Shipping']
         },
         {
-          name: 'Engine Components',
-          category: 'automotive',
-          description: 'Critical engine parts manufactured with exact specifications for optimal performance.',
-          features: ['High Precision', 'Temperature Stable', 'Premium Quality']
+          name: 'Import Clearance',
+          category: 'customs',
+          description: 'Efficient handling of all import documentation and regulatory requirements.',
+          features: ['Documentation', 'Duty Optimization', 'Fast Processing']
         },
         {
-          name: 'Flat Washers',
-          category: 'washers',
-          description: 'Standard flat washers for load distribution and surface protection.',
-          features: ['Various Sizes', 'Zinc Plated', 'Stainless Options']
+          name: 'Export Clearance',
+          category: 'customs',
+          description: 'Streamlined export processes ensuring compliance and timely shipment.',
+          features: ['Export Licenses', 'Compliance', 'Quick Turnaround']
         },
         {
-          name: 'Spring Washers',
-          category: 'washers',
-          description: 'Lock washers designed to prevent loosening under vibration.',
-          features: ['Vibration Proof', 'High Tension', 'Durable']
+          name: 'Storage Solutions',
+          category: 'warehouse',
+          description: 'Flexible warehouse space tailored to your inventory requirements.',
+          features: ['Secure Storage', 'Climate Control', 'Scalable Space']
         },
         {
-          name: 'Metal Fasteners',
-          category: 'other',
-          description: 'Complete range of bolts, nuts, and screws for various applications.',
-          features: ['Multiple Grades', 'Corrosion Resistant', 'ISO Certified']
+          name: 'DG Shipment Handling',
+          category: 'specialized',
+          description: 'Specialized handling of dangerous goods with strict compliance to IMCO regulations.',
+          features: ['IMCO Classes', 'Safety Protocols', 'Certified Handlers']
         }
       ]);
       console.log('Sample products created');

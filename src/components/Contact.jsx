@@ -1,5 +1,5 @@
 import { useEffect, useRef, useState } from 'react';
-import { FiSend, FiPhone, FiMail, FiMapPin, FiClock } from 'react-icons/fi';
+import { FiSend } from 'react-icons/fi';
 import axios from 'axios';
 import './Contact.css';
 
@@ -60,68 +60,48 @@ const Contact = () => {
     }
   };
 
-  const contactInfo = [
-    {
-      icon: <FiPhone />,
-      title: 'Call Us',
-      details: ['+91 98765 43210', '+91 0755-82493720'],
-    },
-    {
-      icon: <FiMail />,
-      title: 'Email Us',
-      details: ['info@jaspreetimpex.com', 'sales@jaspreetimpex.com'],
-    },
-    {
-      icon: <FiMapPin />,
-      title: 'Visit Us',
-      details: ['Phagwara, Kapurthala', 'Punjab, India'],
-    },
-    {
-      icon: <FiClock />,
-      title: 'Working Hours',
-      details: ['Mon - Sat: 9:00 AM - 6:00 PM', 'Sunday: Closed'],
-    },
-  ];
-
   return (
     <section className="contact-section section" ref={sectionRef} id="contact">
       <div className="contact-bg"></div>
       <div className="container">
         <div className="section-title fade-in">
           <h2>Get In Touch</h2>
-          <p>Ready to discuss your automotive component requirements? Contact us today.</p>
+          <p>Ready to streamline your logistics? Request a quote or speak with our team today.</p>
         </div>
 
         <div className="contact-grid">
           <div className="contact-info fade-in">
-            <h3>Contact Information</h3>
+            <h3>Why Contact Us?</h3>
             <p className="info-subtitle">
-              Reach out to us for inquiries about our products and services.
+              Whether you have a complex shipment requirement, need a quote, or are looking to
+              optimize your supply chain, our team is ready to assist.
             </p>
 
             <div className="info-cards">
-              {contactInfo.map((info, index) => (
-                <div key={index} className="info-card">
-                  <div className="info-icon">{info.icon}</div>
-                  <div className="info-content">
-                    <h4>{info.title}</h4>
-                    {info.details.map((detail, i) => (
-                      <p key={i}>{detail}</p>
-                    ))}
-                  </div>
+              <div className="info-card">
+                <div className="info-content">
+                  <h4>Freight Forwarding</h4>
+                  <p>Air, sea, and road transport solutions for your cargo</p>
                 </div>
-              ))}
-            </div>
-
-            <div className="gst-info">
-              <span className="gst-label">GST Number:</span>
-              <span className="gst-number">03ATPPK3375A1ZX</span>
+              </div>
+              <div className="info-card">
+                <div className="info-content">
+                  <h4>Customs Clearance</h4>
+                  <p>Smooth import/export clearance with full compliance</p>
+                </div>
+              </div>
+              <div className="info-card">
+                <div className="info-content">
+                  <h4>Supply Chain</h4>
+                  <p>End-to-end logistics management and optimization</p>
+                </div>
+              </div>
             </div>
           </div>
 
           <div className="contact-form-wrapper fade-in">
             <form className="contact-form" onSubmit={handleSubmit}>
-              <h3>Send Us a Message</h3>
+              <h3>Request a Quote</h3>
 
               <div className="form-row">
                 <div className="form-group">
@@ -177,18 +157,20 @@ const Contact = () => {
               </div>
 
               <div className="form-group">
-                <label htmlFor="product">Product Interest</label>
+                <label htmlFor="product">Service Interest</label>
                 <select
                   id="product"
                   name="product"
                   value={formData.product}
                   onChange={handleChange}
                 >
-                  <option value="">Select a product category</option>
-                  <option value="automotive">Automotive Components</option>
-                  <option value="washers">Metal Washers</option>
-                  <option value="fasteners">Metal Fasteners</option>
-                  <option value="custom">Custom Requirements</option>
+                  <option value="">Select a service</option>
+                  <option value="freight">Freight Forwarding</option>
+                  <option value="customs">Customs Clearance</option>
+                  <option value="warehouse">Warehousing & Distribution</option>
+                  <option value="dg">DG Shipment Handling</option>
+                  <option value="ecommerce">E-commerce Logistics</option>
+                  <option value="supply-chain">Supply Chain Management</option>
                   <option value="other">Other</option>
                 </select>
               </div>
@@ -201,13 +183,13 @@ const Contact = () => {
                   value={formData.message}
                   onChange={handleChange}
                   rows="5"
-                  placeholder="Tell us about your requirements..."
+                  placeholder="Tell us about your logistics requirements..."
                   required
                 ></textarea>
               </div>
 
               <button type="submit" className="btn-primary-custom submit-btn" disabled={submitting}>
-                <FiSend /> {submitting ? 'Sending...' : 'Send Message'}
+                <FiSend /> {submitting ? 'Sending...' : 'Send Inquiry'}
               </button>
             </form>
           </div>

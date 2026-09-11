@@ -1,5 +1,5 @@
 import { useEffect } from 'react';
-import { FiAward, FiGlobe, FiPackage, FiShield, FiTarget, FiUsers } from 'react-icons/fi';
+import { FiAward, FiGlobe, FiTruck, FiShield, FiTarget, FiUsers } from 'react-icons/fi';
 import SEO from '../components/SEO';
 import './AboutUs.css';
 
@@ -9,29 +9,29 @@ const AboutUs = () => {
   }, []);
 
   const milestones = [
-    { year: '2009', event: 'Founded by Late S. Kirpal Singh Sethi in Phagwara, Punjab' },
-    { year: '2012', event: 'Expanded manufacturing facility with modern machinery' },
-    { year: '2015', event: 'Achieved ISO 9002 certification' },
-    { year: '2018', event: 'Expanded to 30+ countries worldwide' },
-    { year: '2020', event: 'Established dedicated quality laboratories' },
-    { year: '2024', event: 'Serving 40+ countries with 100% export focus' },
+    { year: '2000s', event: 'Founded with a vision to provide reliable logistics solutions' },
+    { year: '2010s', event: 'Expanded operations across major Indian cities' },
+    { year: '2015', event: 'Achieved licensed customs house agent status' },
+    { year: '2018', event: 'Expanded to serve 30+ countries globally' },
+    { year: '2020', event: 'Established specialized DG handling capabilities' },
+    { year: '2024', event: 'Serving 50+ countries with comprehensive logistics solutions' },
   ];
 
   const values = [
     {
       icon: <FiTarget />,
-      title: 'Precision',
-      description: 'Every component is manufactured with exact specifications and tight tolerances.',
+      title: 'Reliability',
+      description: 'Every shipment is handled with precision and delivered on time, every time.',
     },
     {
       icon: <FiShield />,
-      title: 'Quality',
-      description: 'Multi-stage quality checks ensure international standards are met consistently.',
+      title: 'Safety',
+      description: 'Strict adherence to international safety standards and regulatory compliance.',
     },
     {
       icon: <FiGlobe />,
       title: 'Global Reach',
-      description: 'Reliable supply chain delivering to over 40 countries worldwide.',
+      description: 'Comprehensive network covering 50+ countries with seamless logistics solutions.',
     },
     {
       icon: <FiUsers />,
@@ -43,9 +43,9 @@ const AboutUs = () => {
   return (
     <div className="about-us-page">
       <SEO
-        title="About Us - Jaspreet Impex (GEE TEC) | ISO 9002 Certified Manufacturer"
-        description="Learn about Jaspreet Impex (GEE TEC) - trusted manufacturer of automotive components since 2009. ISO 9002 certified, serving 40+ countries with precision engineering."
-        keywords="about Jaspreet Impex, GEE TEC history, ISO 9002 manufacturer India, automotive components company Punjab"
+        title="About Us - Jaspreet Impex | Logistics Solutions India"
+        description="Learn about Jaspreet Impex - your trusted logistics partner offering freight forwarding, customs clearance, and supply chain solutions across India and globally."
+        keywords="about Jaspreet Impex, logistics company India, freight forwarding, customs clearance"
         url="https://jaspreetimpex.com/about-us"
       />
       {/* Hero Banner */}
@@ -53,7 +53,7 @@ const AboutUs = () => {
         <div className="page-hero-bg"></div>
         <div className="container">
           <h1>About Jaspreet Impex</h1>
-          <p>Heritage of Excellence in Automotive Manufacturing</p>
+          <p>Your Trusted Partner for End-to-End Logistics Solutions</p>
         </div>
       </section>
 
@@ -63,37 +63,38 @@ const AboutUs = () => {
           <div className="story-grid">
             <div className="story-content">
               <div className="section-badge">Our Story</div>
-              <h2>A Legacy Built on Vision and Excellence</h2>
+              <h2>A Legacy Built on Trust and Excellence</h2>
               <p>
-                Jaspreet Impex (GEE TEC) was established through the vision of
-                <strong> Late S. Kirpal Singh Sethi</strong>, starting as a small unit
-                in Phagwara, Punjab, and expanding into a large-scale enterprise.
+                Jaspreet Impex was established with a vision to provide reliable and efficient
+                logistics solutions to businesses across India and beyond.
               </p>
               <p>
-                What began as a modest manufacturing operation has grown into a
-                <strong> 100% export unit</strong> delivering precision-engineered
-                automotive components and metal fasteners to over 40 countries worldwide.
+                What began as a modest operation has grown into a
+                <strong> comprehensive logistics company</strong> serving 50+ countries with
+                freight forwarding, customs clearance, and supply chain management services.
               </p>
               <p>
-                Our competitive advantage lies in combining low production costs in India
-                with international quality standards, making us a preferred partner for
-                global automotive companies.
+                Our competitive advantage lies in combining cost-effective solutions with
+                international quality standards, making us a preferred logistics partner for
+                businesses worldwide.
               </p>
             </div>
             <div className="story-visual">
               <div className="story-image">
-                <div className="image-placeholder">
-                  <span className="placeholder-icon">🏭</span>
-                  <span>Our Manufacturing Heritage</span>
-                </div>
+                <img 
+                  src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800&h=400&fit=crop" 
+                  alt="Jaspreet Impex Global Logistics" 
+                  className="story-img"
+                  loading="lazy"
+                />
               </div>
               <div className="story-stats">
                 <div className="stat-box">
-                  <span className="stat-number">15+</span>
+                  <span className="stat-number">22+</span>
                   <span className="stat-label">Years</span>
                 </div>
                 <div className="stat-box">
-                  <span className="stat-number">40+</span>
+                  <span className="stat-number">50+</span>
                   <span className="stat-label">Countries</span>
                 </div>
               </div>
@@ -134,25 +135,25 @@ const AboutUs = () => {
               <div className="vision-icon">🎯</div>
               <h3>Our Mission</h3>
               <p>
-                To provide the best solutions for automotive components, combining
-                Indian manufacturing excellence with international quality standards,
-                ensuring customer satisfaction through reliable delivery and competitive pricing.
+                To provide seamless logistics solutions that empower businesses to grow,
+                combining Indian logistics expertise with global standards of efficiency
+                and reliability.
               </p>
             </div>
             <div className="vision-card">
               <div className="vision-icon">🌐</div>
               <h3>Our Vision</h3>
               <p>
-                To become a globally recognized leader in automotive component manufacturing,
-                known for precision engineering, quality reliability, and customer-centric approach.
+                To become a globally recognized leader in logistics solutions,
+                known for reliability, safety, and customer-centric approach.
               </p>
             </div>
             <div className="vision-card">
               <div className="vision-icon">⭐</div>
               <h3>Our Purpose</h3>
               <p>
-                Making precision-engineered automotive components accessible worldwide,
-                while maintaining the highest standards of quality and environmental responsibility.
+                Making global trade accessible and efficient for businesses of all sizes,
+                while maintaining the highest standards of safety and compliance.
               </p>
             </div>
           </div>
@@ -163,38 +164,38 @@ const AboutUs = () => {
       <section className="quality-section section" id="quality">
         <div className="container">
           <div className="section-title">
-            <h2>Quality Policy</h2>
-            <p>Committed to excellence at every stage</p>
+            <h2>Our Commitment</h2>
+            <p>Dedicated to excellence in every shipment</p>
           </div>
 
           <div className="quality-content">
             <div className="quality-main">
               <p className="quality-statement">
-                Quality checks occur at every stage of production. Raw materials and
-                finished components undergo testing using monitoring equipment to meet
-                international specifications before dispatch.
+                We prioritize safety, compliance, and efficiency in every aspect of our
+                operations. Our team ensures that all shipments are handled with the utmost
+                care and delivered on time.
               </p>
 
               <div className="quality-process">
                 <div className="process-step">
                   <div className="step-number">01</div>
-                  <h4>Raw Material Testing</h4>
-                  <p>All incoming materials undergo rigorous testing for composition and quality.</p>
+                  <h4>Route Planning</h4>
+                  <p>Optimal route selection for efficient and cost-effective delivery.</p>
                 </div>
                 <div className="process-step">
                   <div className="step-number">02</div>
-                  <h4>In-Process Monitoring</h4>
-                  <p>Continuous quality monitoring during manufacturing ensures consistency.</p>
+                  <h4>Real-Time Tracking</h4>
+                  <p>Advanced tracking systems for complete shipment visibility.</p>
                 </div>
                 <div className="process-step">
                   <div className="step-number">03</div>
-                  <h4>Final Inspection</h4>
-                  <p>Finished products undergo final inspection with advanced testing equipment.</p>
+                  <h4>Compliance Check</h4>
+                  <p>Ensuring all regulatory requirements are met for smooth clearance.</p>
                 </div>
                 <div className="process-step">
                   <div className="step-number">04</div>
-                  <h4>Certification</h4>
-                  <p>Complete documentation and quality certification before dispatch.</p>
+                  <h4>Safe Delivery</h4>
+                  <p>Secure handling and timely delivery to destination.</p>
                 </div>
               </div>
             </div>
@@ -202,18 +203,18 @@ const AboutUs = () => {
             <div className="quality-certifications">
               <div className="cert-card">
                 <FiAward className="cert-icon" />
-                <h4>ISO 9002</h4>
-                <p>Quality Management System Certified</p>
+                <h4>Licensed CHA</h4>
+                <p>Licensed Customs House Agent</p>
               </div>
               <div className="cert-card">
-                <FiPackage className="cert-icon" />
-                <h4>100% Inspection</h4>
-                <p>Every product undergoes complete quality check</p>
+                <FiTruck className="cert-icon" />
+                <h4>MSME Registered</h4>
+                <p>Government Recognized Enterprise</p>
               </div>
               <div className="cert-card">
                 <FiShield className="cert-icon" />
-                <h4>International Standards</h4>
-                <p>Meeting global automotive quality requirements</p>
+                <h4>Safety Certified</h4>
+                <p>International Safety Standards Compliance</p>
               </div>
             </div>
           </div>

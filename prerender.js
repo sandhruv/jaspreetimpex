@@ -8,33 +8,33 @@ const distDir = resolve(__dirname, 'dist');
 const routes = [
   {
     path: '/',
-    title: 'Jaspreet Impex (GEE TEC) | Automotive Components & Metal Fasteners Manufacturer India',
-    description: 'Jaspreet Impex (GEE TEC) - Leading manufacturer and exporter of precision automotive components, brake parts, clutch parts, metal washers, and fasteners from India. 15+ years experience, ISO 9002 certified, serving 40+ countries.',
-    keywords: 'automotive components manufacturer India, metal fasteners exporter, brake parts India, clutch components, metal washers manufacturer, GEE TEC, Jaspreet Impex, Phagwara, Punjab, ISO 9002 certified',
+    title: 'Jaspreet Impex | Logistics Solutions - Freight Forwarding, Customs Clearance India',
+    description: 'Jaspreet Impex - Leading logistics company in India offering freight forwarding, customs clearance, warehousing, and supply chain management. 22+ years experience, ISO 9002 certified, serving 50+ countries.',
+    keywords: 'logistics company India, freight forwarding India, customs clearance services, supply chain management, Jaspreet Impex, Phagwara, Punjab, ISO 9002 certified',
   },
   {
     path: '/about-us',
-    title: 'About Us - Jaspreet Impex (GEE TEC) | ISO 9002 Certified Manufacturer',
-    description: 'Learn about Jaspreet Impex (GEE TEC) - trusted manufacturer of automotive components since 2009. ISO 9002 certified, serving 40+ countries with precision engineering.',
-    keywords: 'about Jaspreet Impex, GEE TEC history, ISO 9002 manufacturer India, automotive components company Punjab',
+    title: 'About Us - Jaspreet Impex | ISO 9002 Certified Logistics Company',
+    description: 'Learn about Jaspreet Impex - trusted logistics partner since 2003. ISO 9002 certified, serving 50+ countries with freight forwarding, customs clearance, and supply chain solutions.',
+    keywords: 'about Jaspreet Impex, logistics company Punjab, ISO 9002 certified logistics, customs house agent India',
   },
   {
     path: '/products',
-    title: 'Our Products - Jaspreet Impex | Brake Parts, Clutch Components, Metal Washers, Fasteners',
-    description: 'Explore our range of precision automotive components: brake parts, clutch components, engine parts, metal washers, and industrial fasteners. ISO certified, export quality.',
-    keywords: 'brake components India, clutch parts manufacturer, metal washers supplier, industrial fasteners India, automotive spare parts',
+    title: 'Our Services - Jaspreet Impex | Freight, Customs, Warehousing, Supply Chain',
+    description: 'Explore our logistics services: freight forwarding (air, sea, road), customs clearance, warehousing & distribution, and specialized logistics including DG handling and e-commerce.',
+    keywords: 'freight forwarding India, customs clearance services, warehousing solutions, DG shipment handling, logistics services',
   },
   {
     path: '/contact-us',
-    title: 'Contact Us - Jaspreet Impex | Get Quote for Automotive Components',
-    description: 'Contact Jaspreet Impex for automotive components inquiries. Phone: +91 98765 43210. Email: info@jaspreetimpex.com. Located in Phagwara, Punjab, India.',
-    keywords: 'contact Jaspreet Impex, automotive components inquiry, GEE TEC contact, quote for brake parts',
+    title: 'Contact Us - Jaspreet Impex | Get Quote for Logistics Services',
+    description: 'Contact Jaspreet Impex for logistics inquiries. Phone: +91 98765 43210. Email: info@jaspreetimpex.com. Located in Phagwara, Punjab, India.',
+    keywords: 'contact Jaspreet Impex, logistics inquiry, freight forwarding quote, customs clearance',
   },
   {
     path: '/photos',
-    title: 'Photos - Jaspreet Impex | Manufacturing Facility & Products Gallery',
-    description: 'View photos of Jaspreet Impex manufacturing facility, automotive components, metal washers, and fasteners production in Phagwara, Punjab, India.',
-    keywords: 'Jaspreet Impex photos, automotive components factory India, metal washers manufacturing, GEE TEC facility',
+    title: 'Our Operations - Jaspreet Impex | Logistics Facilities Gallery',
+    description: 'View photos of Jaspreet Impex logistics operations, warehouse facilities, container terminal, cargo ship, and fleet management in India.',
+    keywords: 'Jaspreet Impex photos, logistics operations India, warehouse facility, container terminal',
   },
 ];
 

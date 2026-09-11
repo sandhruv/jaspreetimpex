@@ -63,18 +63,25 @@
 }
 
 .logo-icon {
-  width: 50px;
-  height: 50px;
-  background: linear-gradient(135deg, var(--color-primary), var(--color-primary-dark));
-  border-radius: 12px;
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, var(--color-primary), #0a5c5c);
+  border-radius: 14px;
   display: flex;
   align-items: center;
   justify-content: center;
   font-family: var(--font-primary);
   font-weight: 800;
-  font-size: 1.3rem;
+  font-size: 1.2rem;
   color: var(--color-white);
   letter-spacing: -1px;
+  box-shadow: 0 4px 15px rgba(13, 110, 110, 0.3);
+  transition: var(--transition);
+}
+
+.logo:hover .logo-icon {
+  transform: scale(1.05);
+  box-shadow: 0 6px 20px rgba(13, 110, 110, 0.4);
 }
 
 .logo-text {
@@ -85,17 +92,18 @@
 .logo-name {
   font-family: var(--font-primary);
   font-weight: 700;
-  font-size: 1.3rem;
+  font-size: 1.35rem;
   color: var(--color-secondary);
   line-height: 1.1;
 }
 
 .logo-tagline {
-  font-size: 0.75rem;
+  font-size: 0.7rem;
   color: var(--color-primary);
-  font-weight: 600;
-  letter-spacing: 2px;
+  font-weight: 700;
+  letter-spacing: 3px;
   text-transform: uppercase;
+  margin-top: 1px;
 }
 
 /* Desktop Nav */

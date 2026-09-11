@@ -26,33 +26,33 @@ const WhyChooseUs = () => {
   const advantages = [
     {
       icon: <FiTarget />,
-      title: 'Precision Quality',
-      description: 'Every product undergoes rigorous quality checks at multiple stages of production.',
+      title: 'Precision & Reliability',
+      description: 'Every shipment is handled with meticulous planning and real-time tracking for guaranteed delivery.',
     },
     {
       icon: <FiTruck />,
-      title: 'Global Delivery',
-      description: 'Reliable supply chain ensuring timely delivery to 40+ countries worldwide.',
+      title: 'Pan-India Network',
+      description: 'Comprehensive logistics network covering all major cities and industrial hubs across India.',
     },
     {
       icon: <FiDollarSign />,
-      title: 'Competitive Pricing',
-      description: 'Cost-effective manufacturing in India with international quality standards.',
+      title: 'Cost-Effective Solutions',
+      description: 'Optimized logistics solutions that reduce costs while maintaining highest service standards.',
     },
     {
       icon: <FiClock />,
-      title: 'Quick Turnaround',
-      description: 'Efficient production processes ensuring fast lead times for all orders.',
+      title: 'On-Time Delivery',
+      description: '99.8% on-time delivery rate through efficient route planning and proactive monitoring.',
     },
     {
       icon: <FiHeadphones />,
-      title: 'Dedicated Support',
-      description: 'Personalized customer service with dedicated account managers.',
+      title: '24/7 Customer Support',
+      description: 'Dedicated support team available round the clock to address your logistics needs.',
     },
     {
       icon: <FiCheckCircle />,
-      title: 'ISO Certified',
-      description: 'ISO 9002 certified processes ensuring consistent quality and reliability.',
+      title: 'Safety & Compliance',
+      description: 'Strict adherence to international safety standards and regulatory compliance for all shipments.',
     },
   ];
 
@@ -64,31 +64,31 @@ const WhyChooseUs = () => {
             <div className="section-badge">Why Choose Us</div>
             <h2 className="why-title">
               Your Trusted Partner for
-              <span className="highlight"> Automotive Excellence</span>
+              <span className="highlight"> Logistics Excellence</span>
             </h2>
             <p className="why-description">
-              With over 15 years of experience and a commitment to quality, Jaspreet Impex
-              delivers precision-engineered components that meet the highest international standards.
+              With decades of experience and a commitment to reliability, Jaspreet Impex
+              delivers seamless logistics solutions that keep your business moving forward.
             </p>
 
             <div className="quality-checks">
-              <h4>Our Quality Commitment:</h4>
+              <h4>Our Commitment:</h4>
               <ul>
                 <li>
                   <FiCheckCircle className="check-icon" />
-                  Raw material testing before production
+                  Real-time shipment tracking & visibility
                 </li>
                 <li>
                   <FiCheckCircle className="check-icon" />
-                  In-process quality monitoring
+                  Dedicated account managers for personalized service
                 </li>
                 <li>
                   <FiCheckCircle className="check-icon" />
-                  Final inspection with advanced equipment
+                  Comprehensive insurance coverage options
                 </li>
                 <li>
                   <FiCheckCircle className="check-icon" />
-                  Documentation and certification
+                  End-to-end supply chain management
                 </li>
               </ul>
             </div>

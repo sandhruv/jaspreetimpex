@@ -10,7 +10,7 @@ const ProductSchema = new mongoose.Schema({
   category: {
     type: String,
     required: [true, 'Please add a category'],
-    enum: ['automotive', 'washers', 'other']
+    enum: ['freight', 'customs', 'warehouse', 'specialized', 'other']
   },
   description: {
     type: String,

@@ -22,9 +22,10 @@
 }
 
 .footer-logo .logo-icon {
-  width: 50px;
-  height: 50px;
-  background: var(--color-primary);
+  width: 52px;
+  height: 52px;
+  background: linear-gradient(135deg, var(--color-primary), #0a5c5c);
+  box-shadow: 0 4px 15px rgba(13, 110, 110, 0.3);
 }
 
 .footer-logo .logo-name {

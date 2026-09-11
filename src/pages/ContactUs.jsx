@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { FiSend, FiPhone, FiMail, FiMapPin, FiClock, FiHome } from 'react-icons/fi';
+import { FiSend } from 'react-icons/fi';
 import axios from 'axios';
 import SEO from '../components/SEO';
 import './ContactUs.css';
@@ -14,7 +14,7 @@ const ContactUs = () => {
     phone: '',
     country: '',
     product: '',
-    quantity: '',
+    cargoType: '',
     message: '',
   });
   const [submitting, setSubmitting] = useState(false);
@@ -40,7 +40,7 @@ const ContactUs = () => {
         phone: '',
         country: '',
         product: '',
-        quantity: '',
+        cargoType: '',
         message: '',
       });
     } catch (err) {
@@ -50,45 +50,12 @@ const ContactUs = () => {
     }
   };
 
-  const contactInfo = [
-    {
-      icon: <FiPhone />,
-      title: 'Phone',
-      details: ['+91 98765 43210', '+91 0755-82493720'],
-      action: 'tel:+919876543210',
-    },
-    {
-      icon: <FiMail />,
-      title: 'Email',
-      details: ['info@jaspreetimpex.com', 'sales@jaspreetimpex.com'],
-      action: 'mailto:info@jaspreetimpex.com',
-    },
-    {
-      icon: <FiMapPin />,
-      title: 'Office',
-      details: ['Phagwara, Kapurthala', 'Punjab, India'],
-      action: null,
-    },
-    {
-      icon: <FiHome />,
-      title: 'Manufacturing',
-      details: ['Phagwara Industrial Area', 'Punjab, India'],
-      action: null,
-    },
-    {
-      icon: <FiClock />,
-      title: 'Working Hours',
-      details: ['Mon - Sat: 9:00 AM - 6:00 PM', 'Sunday: Closed'],
-      action: null,
-    },
-  ];
-
   return (
     <div className="contact-us-page">
       <SEO
-        title="Contact Us - Jaspreet Impex | Get Quote for Automotive Components"
-        description="Contact Jaspreet Impex for automotive components inquiries. Phone: +91 98765 43210. Email: info@jaspreetimpex.com. Located in Phagwara, Punjab, India."
-        keywords="contact Jaspreet Impex, automotive components inquiry, GEE TEC contact, quote for brake parts"
+        title="Contact Us - Jaspreet Impex | Get Quote for Logistics Services"
+        description="Contact Jaspreet Impex for logistics inquiries. Request a quote for freight forwarding, customs clearance, and supply chain solutions."
+        keywords="contact Jaspreet Impex, logistics inquiry, freight forwarding quote, customs clearance"
         url="https://jaspreetimpex.com/contact-us"
       />
       {/* Hero Banner */}
@@ -96,7 +63,7 @@ const ContactUs = () => {
         <div className="page-hero-bg"></div>
         <div className="container">
           <h1>Contact Us</h1>
-          <p>Get in touch for inquiries about our products and services</p>
+          <p>Get in touch for logistics inquiries and quotes</p>
         </div>
       </section>
 
@@ -106,9 +73,9 @@ const ContactUs = () => {
           <div className="contact-grid">
             {/* Contact Form */}
             <div className="contact-form-wrapper">
-              <h2>Send Us an Inquiry</h2>
+              <h2>Request a Quote</h2>
               <p className="form-subtitle">
-                Fill out the form below and our team will respond within 24 hours.
+                Fill out the form below and our logistics team will respond within 24 hours.
               </p>
 
               <form className="contact-form" onSubmit={handleSubmit}>
@@ -180,7 +147,7 @@ const ContactUs = () => {
                     />
                   </div>
                   <div className="form-group">
-                    <label htmlFor="product">Product Interest *</label>
+                    <label htmlFor="product">Service Required *</label>
                     <select
                       id="product"
                       name="product"
@@ -188,28 +155,27 @@ const ContactUs = () => {
                       onChange={handleChange}
                       required
                     >
-                      <option value="">Select a product</option>
-                      <option value="brake">Brake Components</option>
-                      <option value="clutch">Clutch Parts</option>
-                      <option value="engine">Engine Components</option>
-                      <option value="suspension">Suspension Parts</option>
-                      <option value="washers">Metal Washers</option>
-                      <option value="fasteners">Metal Fasteners</option>
-                      <option value="custom">Custom Requirements</option>
+                      <option value="">Select a service</option>
+                      <option value="freight">Freight Forwarding</option>
+                      <option value="customs">Customs Clearance</option>
+                      <option value="warehouse">Warehousing & Distribution</option>
+                      <option value="dg">DG Shipment Handling</option>
+                      <option value="ecommerce">E-commerce Logistics</option>
+                      <option value="supply-chain">Supply Chain Management</option>
                       <option value="other">Other</option>
                     </select>
                   </div>
                 </div>
 
                 <div className="form-group">
-                  <label htmlFor="quantity">Estimated Quantity</label>
+                  <label htmlFor="cargoType">Cargo Type</label>
                   <input
                     type="text"
-                    id="quantity"
-                    name="quantity"
-                    value={formData.quantity}
+                    id="cargoType"
+                    name="cargoType"
+                    value={formData.cargoType}
                     onChange={handleChange}
-                    placeholder="e.g., 10,000 pieces per month"
+                    placeholder="e.g., General cargo, Hazardous materials, Electronics"
                   />
                 </div>
 
@@ -221,7 +187,7 @@ const ContactUs = () => {
                     value={formData.message}
                     onChange={handleChange}
                     rows="6"
-                    placeholder="Tell us about your specific requirements, specifications, or any questions you have..."
+                    placeholder="Tell us about your logistics requirements, origin/destination, volume, timeline..."
                     required
                   ></textarea>
                 </div>
@@ -234,41 +200,38 @@ const ContactUs = () => {
 
             {/* Contact Info */}
             <div className="contact-info-panel">
-              <h3>Contact Information</h3>
+              <h3>Why Contact Us?</h3>
               <p className="info-subtitle">
-                Reach out to us directly or visit our office.
+                Whether you have a complex shipment requirement, need a quote, or are looking to
+                optimize your supply chain, our team is ready to assist.
               </p>
 
               <div className="info-cards">
-                {contactInfo.map((info, index) => (
-                  <div key={index} className="info-card">
-                    <div className="info-icon">{info.icon}</div>
-                    <div className="info-content">
-                      <h4>{info.title}</h4>
-                      {info.details.map((detail, i) =>
-                        info.action ? (
-                          <a key={i} href={info.action}>
-                            {detail}
-                          </a>
-                        ) : (
-                          <p key={i}>{detail}</p>
-                        )
-                      )}
-                    </div>
+                <div className="info-card">
+                  <div className="info-content">
+                    <h4>Freight Forwarding</h4>
+                    <p>Air, sea, and road transport solutions for your cargo</p>
                   </div>
-                ))}
-              </div>
-
-              <div className="gst-badge">
-                <span className="gst-label">GST Number</span>
-                <span className="gst-number">03ATPPK3375A1ZX</span>
+                </div>
+                <div className="info-card">
+                  <div className="info-content">
+                    <h4>Customs Clearance</h4>
+                    <p>Smooth import/export clearance with full compliance</p>
+                  </div>
+                </div>
+                <div className="info-card">
+                  <div className="info-content">
+                    <h4>Supply Chain</h4>
+                    <p>End-to-end logistics management and optimization</p>
+                  </div>
+                </div>
               </div>
 
               <div className="cert-badge">
                 <span className="cert-icon">🏅</span>
                 <div className="cert-info">
                   <span className="cert-title">ISO 9002 Certified</span>
-                  <span className="cert-text">Quality Management System</span>
+                  <span className="cert-text">GST: 03ATPPK3375A1ZX</span>
                 </div>
               </div>
             </div>
@@ -280,10 +243,15 @@ const ContactUs = () => {
       <section className="map-section">
         <div className="container">
           <div className="map-placeholder">
+            <img 
+              src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=1200&h=300&fit=crop" 
+              alt="Jaspreet Impex Global Network" 
+              className="map-image"
+              loading="lazy"
+            />
             <div className="map-content">
-              <FiMapPin className="map-icon" />
-              <h3>Our Location</h3>
-              <p>Phagwara, Kapurthala, Punjab, India</p>
+              <h3>Our Logistics Network</h3>
+              <p>Serving businesses across India and 50+ countries worldwide</p>
             </div>
           </div>
         </div>

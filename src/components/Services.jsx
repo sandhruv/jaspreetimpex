@@ -1,11 +1,11 @@
 import { useEffect, useRef, useState } from 'react';
 import { Link } from 'react-router-dom';
-import { FiArrowRight, FiSettings, FiGrid, FiBox, FiArrowUpRight } from 'react-icons/fi';
+import { FiArrowRight, FiTruck, FiPackage, FiBox, FiArrowUpRight, FiGlobe, FiShield, FiClock } from 'react-icons/fi';
 import './Services.css';
 
 const Services = () => {
   const sectionRef = useRef(null);
-  const [activeTab, setActiveTab] = useState('automotive');
+  const [activeTab, setActiveTab] = useState('freight');
 
   useEffect(() => {
     const observer = new IntersectionObserver(
@@ -27,40 +27,76 @@ const Services = () => {
 
   const categories = [
     {
-      id: 'automotive',
-      name: 'Automotive Components',
-      icon: <FiSettings />,
-      products: [
-        'Brake Components',
-        'Clutch Parts',
-        'Engine Components',
-        'Suspension Parts',
+      id: 'freight',
+      name: 'Freight Forwarding',
+      icon: <FiGlobe />,
+      services: [
+        'Air Freight',
+        'Sea Freight (FCL & LCL)',
+        'Road Transportation',
+        'Multimodal Transport',
       ],
-      description: 'Precision-engineered automotive components manufactured to meet international quality standards.',
+      images: [
+        'https://images.unsplash.com/photo-1436491865332-7a61a109db05?w=400&h=240&fit=crop',
+        'https://images.unsplash.com/photo-1494412574643-ff11b0a5eb19?w=400&h=240&fit=crop',
+        'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=400&h=240&fit=crop',
+        'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=240&fit=crop',
+      ],
+      description: 'International freight forwarding services with seamless coordination across air, sea, and road transport for global shipping needs.',
     },
     {
-      id: 'washers',
-      name: 'Metal Washers',
-      icon: <FiGrid />,
-      products: [
-        'Flat Washers',
-        'Spring Washers',
-        'Lock Washers',
-        'Custom Washers',
+      id: 'customs',
+      name: 'Customs Clearance',
+      icon: <FiShield />,
+      services: [
+        'Import Clearance',
+        'Export Clearance',
+        'Documentation Handling',
+        'Regulatory Compliance',
       ],
-      description: 'High-quality metal washers in various sizes and specifications for industrial applications.',
+      images: [
+        'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=240&fit=crop',
+        'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=240&fit=crop',
+        'https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=400&h=240&fit=crop',
+        'https://images.unsplash.com/photo-1735020886196-bed638cc1809?w=400&h=240&fit=crop',
+      ],
+      description: 'Smooth customs clearance services ensuring compliance with Indian import/export regulations and minimizing delays.',
     },
     {
-      id: 'other',
-      name: 'Other Products',
+      id: 'warehouse',
+      name: 'Warehousing & Distribution',
       icon: <FiBox />,
-      products: [
-        'Metal Fasteners',
-        'Custom Machined Parts',
-        'Industrial Components',
-        'Specialty Items',
+      services: [
+        'Storage Solutions',
+        'Inventory Management',
+        'Order Fulfillment',
+        'Last-Mile Delivery',
       ],
-      description: 'Diverse range of precision-engineered products tailored to specific industry requirements.',
+      images: [
+        'https://images.unsplash.com/photo-1553413077-190dd305871c?w=400&h=240&fit=crop',
+        'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=240&fit=crop',
+        'https://images.unsplash.com/photo-1565891741441-64926e441838?w=400&h=240&fit=crop',
+        'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=400&h=240&fit=crop',
+      ],
+      description: 'Strategically located warehouses offering flexible storage, detailed inventory management, and streamlined distribution.',
+    },
+    {
+      id: 'specialized',
+      name: 'Specialized Logistics',
+      icon: <FiTruck />,
+      services: [
+        'DG Shipment Handling',
+        'Project Cargo',
+        'E-commerce Logistics',
+        'Supply Chain Management',
+      ],
+      images: [
+        'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=400&h=240&fit=crop',
+        'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=240&fit=crop',
+        'https://images.unsplash.com/photo-1742858492775-8f58f645aa12?w=400&h=240&fit=crop',
+        'https://images.unsplash.com/photo-1553413077-190dd305871c?w=400&h=240&fit=crop',
+      ],
+      description: 'Expert handling of hazardous materials, oversized cargo, and specialized logistics solutions with strict compliance to safety regulations.',
     },
   ];
 
@@ -71,8 +107,8 @@ const Services = () => {
       <div className="services-bg"></div>
       <div className="container">
         <div className="section-title fade-in">
-          <h2>Our Product Categories</h2>
-          <p>Comprehensive range of precision-engineered automotive components and metal fasteners</p>
+          <h2>Our Services</h2>
+          <p>Comprehensive logistics solutions covering freight forwarding, customs clearance, warehousing, and specialized cargo handling</p>
         </div>
 
         <div className="services-tabs fade-in">
@@ -95,32 +131,35 @@ const Services = () => {
               <p>{activeCategory.description}</p>
 
               <div className="product-list">
-                {activeCategory.products.map((product, index) => (
+                {activeCategory.services.map((service, index) => (
                   <div key={index} className="product-item">
                     <span className="product-bullet"></span>
-                    {product}
+                    {service}
                   </div>
                 ))}
               </div>
 
-              <Link to="/products" className="btn-primary-custom">
-                View All Products <FiArrowRight />
+              <Link to="/contact-us" className="btn-primary-custom">
+                Request Quote <FiArrowRight />
               </Link>
             </div>
 
             <div className="content-visual">
               <div className="visual-grid">
-                {activeCategory.products.map((product, index) => (
+                {activeCategory.services.map((service, index) => (
                   <div
                     key={index}
                     className="visual-card"
                     style={{ animationDelay: `${index * 0.1}s` }}
                   >
-                    <div className="card-placeholder">
-                      <span className="card-number">{String(index + 1).padStart(2, '0')}</span>
-                    </div>
+                    <img 
+                      src={activeCategory.images[index]} 
+                      alt={service}
+                      className="card-image"
+                      loading="lazy"
+                    />
                     <div className="card-info">
-                      <span className="card-name">{product}</span>
+                      <span className="card-name">{service}</span>
                       <FiArrowUpRight className="card-arrow" />
                     </div>
                   </div>
@@ -132,8 +171,8 @@ const Services = () => {
 
         <div className="services-cta fade-in">
           <div className="cta-content">
-            <h3>Need Custom Specifications?</h3>
-            <p>We manufacture products tailored to your specific requirements with international quality standards.</p>
+            <h3>Need a Custom Logistics Solution?</h3>
+            <p>We tailor our services to meet your unique shipping and supply chain requirements across India and globally.</p>
             <Link to="/contact-us" className="btn-primary-custom">
               Contact Us <FiArrowRight />
             </Link>

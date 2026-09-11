@@ -1,7 +1,7 @@
 import { useState, useEffect, useMemo } from 'react';
 import { Link, useNavigate } from 'react-router-dom';
 import { 
-  FiHome, FiUsers, FiPackage, FiMessageSquare, 
+  FiHome, FiUsers, FiTruck, FiMessageSquare, 
   FiLogOut, FiMenu, FiX, FiTrendingUp,
   FiClock, FiCheckCircle, FiBarChart2,
   FiGlobe, FiCalendar, FiArrowUp, FiArrowDown, FiMinus,
@@ -15,9 +15,23 @@ const API_URL = import.meta.env.VITE_API_URL || '/api';
 
 const AdminDashboard = () => {
   const [activeTab, setActiveTab] = useState('dashboard');
-  const [stats, setStats] = useState({ users: 0, products: 0, inquiries: 0 });
+  const [stats, setStats] = useState({ users: 0, services: 0, inquiries: 0 });
+
+  const websiteData = {
+    countriesServed: '50+',
+    shipmentsDelivered: '10K+',
+    onTimeDelivery: '99.8%',
+    yearsExperience: '22+',
+    supportAvailable: '24/7',
+    serviceCategories: [
+      { name: 'Freight Forwarding', icon: 'Freight', services: ['Air Freight', 'Sea Freight (FCL & LCL)', 'Road Transportation', 'Multimodal Transport'] },
+      { name: 'Customs Clearance', icon: 'Customs', services: ['Import Clearance', 'Export Clearance', 'Documentation Handling', 'Regulatory Compliance'] },
+      { name: 'Warehousing & Distribution', icon: 'Warehouse', services: ['Storage Solutions', 'Inventory Management', 'Order Fulfillment', 'Last-Mile Delivery'] },
+      { name: 'Specialized Logistics', icon: 'Specialized', services: ['DG Shipment Handling', 'Project Cargo', 'E-commerce Logistics', 'Supply Chain Management'] },
+    ],
+  };
   const [users, setUsers] = useState([]);
-  const [products, setProducts] = useState([]);
+  const [services, setServices] = useState([]);
   const [inquiries, setInquiries] = useState([]);
   const [sidebarOpen, setSidebarOpen] = useState(true);
   const [siteSettings, setSiteSettings] = useState({
@@ -63,10 +77,10 @@ const AdminDashboard = () => {
 
     const categoryMap = {};
     inquiries.forEach(i => {
-      const cat = i.product || 'Other';
+      const cat = i.service || i.product || 'Other';
       categoryMap[cat] = (categoryMap[cat] || 0) + 1;
     });
-    const productDistribution = Object.entries(categoryMap)
+    const serviceDistribution = Object.entries(categoryMap)
       .map(([name, count]) => ({ name, count, pct: inquiries.length > 0 ? Math.round((count / inquiries.length) * 100) : 0 }))
       .sort((a, b) => b.count - a.count);
 
@@ -104,7 +118,7 @@ const AdminDashboard = () => {
     return {
       todayCount, thisWeekCount, thisMonthCount, monthGrowth,
       statusCounts, responseRate, closedRate,
-      productDistribution, topCountries,
+      serviceDistribution, topCountries,
       monthlyTrends, maxMonthly, peakHour, uniqueEmails
     };
   }, [inquiries]);
@@ -120,19 +134,19 @@ const AdminDashboard = () => {
     try {
       const headers = { Authorization: `Bearer ${token}` };
       
-      const [usersRes, productsRes, inquiriesRes] = await Promise.all([
+      const [usersRes, servicesRes, inquiriesRes] = await Promise.all([
         axios.get(`${API_URL}/users`, { headers }).catch(() => ({ data: { data: [] } })),
         axios.get(`${API_URL}/products/admin`, { headers }).catch(() => ({ data: { data: [] } })),
         axios.get(`${API_URL}/inquiries`, { headers }).catch(() => ({ data: { data: [] } }))
       ]);
 
       setUsers(usersRes.data.data || []);
-      setProducts(productsRes.data.data || []);
+      setServices(servicesRes.data.data || []);
       setInquiries(inquiriesRes.data.data || []);
       
       setStats({
         users: usersRes.data.data?.length || 0,
-        products: productsRes.data.data?.length || 0,
+        services: servicesRes.data.data?.length || 0,
         inquiries: inquiriesRes.data.data?.length || 0
       });
     } catch (err) {
@@ -189,11 +203,23 @@ const AdminDashboard = () => {
     }
   };
 
+  const deleteProduct = async (id) => {
+    if (!window.confirm('Are you sure you want to delete this service?')) return;
+    try {
+      await axios.delete(`${API_URL}/products/${id}`, {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+      fetchData();
+    } catch (err) {
+      console.error('Error deleting product:', err);
+    }
+  };
+
   const menuItems = [
     { id: 'dashboard', name: 'Dashboard', icon: <FiHome /> },
     { id: 'analytics', name: 'Analytics', icon: <FiBarChart2 /> },
     { id: 'users', name: 'Users', icon: <FiUsers /> },
-    { id: 'products', name: 'Products', icon: <FiPackage /> },
+    { id: 'services', name: 'Services', icon: <FiTruck /> },
     { id: 'inquiries', name: 'Inquiries', icon: <FiMessageSquare /> },
     { id: 'site-settings', name: 'Site Settings', icon: <FiSettings /> },
   ];
@@ -258,56 +284,104 @@ const AdminDashboard = () => {
           {/* Dashboard Tab */}
           {activeTab === 'dashboard' && (
             <div className="dashboard-content">
-              <div className="stats-grid">
-                <div className="stat-card">
-                  <div className="stat-icon users"><FiUsers /></div>
-                  <div className="stat-info">
-                    <span className="stat-number">{stats.users}</span>
-                    <span className="stat-label">Total Users</span>
+              <div className="website-stats-grid">
+                <div className="website-stat-card">
+                  <div className="website-stat-icon globe"><FiGlobe /></div>
+                  <div className="website-stat-info">
+                    <span className="website-stat-number">{websiteData.countriesServed}</span>
+                    <span className="website-stat-label">Countries Served</span>
                   </div>
                 </div>
-                <div className="stat-card">
-                  <div className="stat-icon products"><FiPackage /></div>
-                  <div className="stat-info">
-                    <span className="stat-number">{stats.products}</span>
-                    <span className="stat-label">Products</span>
+                <div className="website-stat-card">
+                  <div className="website-stat-icon shipments"><FiTruck /></div>
+                  <div className="website-stat-info">
+                    <span className="website-stat-number">{websiteData.shipmentsDelivered}</span>
+                    <span className="website-stat-label">Shipments Delivered</span>
                   </div>
                 </div>
-                <div className="stat-card">
-                  <div className="stat-icon inquiries"><FiMessageSquare /></div>
-                  <div className="stat-info">
-                    <span className="stat-number">{stats.inquiries}</span>
-                    <span className="stat-label">Inquiries</span>
+                <div className="website-stat-card">
+                  <div className="website-stat-icon ontime"><FiCheckCircle /></div>
+                  <div className="website-stat-info">
+                    <span className="website-stat-number">{websiteData.onTimeDelivery}</span>
+                    <span className="website-stat-label">On-Time Delivery</span>
                   </div>
                 </div>
-                <div className="stat-card">
-                  <div className="stat-icon pending"><FiClock /></div>
-                  <div className="stat-info">
-                    <span className="stat-number">
-                      {inquiries.filter(i => i.status === 'pending').length}
-                    </span>
-                    <span className="stat-label">Pending</span>
+                <div className="website-stat-card">
+                  <div className="website-stat-icon years"><FiCalendar /></div>
+                  <div className="website-stat-info">
+                    <span className="website-stat-number">{websiteData.yearsExperience}</span>
+                    <span className="website-stat-label">Years of Excellence</span>
+                  </div>
+                </div>
+                <div className="website-stat-card">
+                  <div className="website-stat-icon support"><FiClock /></div>
+                  <div className="website-stat-info">
+                    <span className="website-stat-number">{websiteData.supportAvailable}</span>
+                    <span className="website-stat-label">Support Available</span>
+                  </div>
+                </div>
+                <div className="website-stat-card">
+                  <div className="website-stat-icon categories"><FiTruck /></div>
+                  <div className="website-stat-info">
+                    <span className="website-stat-number">{websiteData.serviceCategories.length}</span>
+                    <span className="website-stat-label">Service Categories</span>
                   </div>
                 </div>
               </div>
 
-              <div className="recent-section">
-                <h3>Recent Inquiries</h3>
-                <div className="recent-list">
-                  {inquiries.slice(0, 5).map((inquiry) => (
-                    <div key={inquiry._id} className="recent-item">
-                      <div className="item-info">
-                        <span className="item-name">{inquiry.name}</span>
-                        <span className="item-email">{inquiry.email}</span>
+              <div className="dashboard-grid">
+                <div className="recent-section">
+                  <h3>Recent Inquiries</h3>
+                  <div className="recent-list">
+                    {inquiries.slice(0, 5).map((inquiry) => (
+                      <div key={inquiry._id} className="recent-item">
+                        <div className="item-info">
+                          <span className="item-name">{inquiry.name}</span>
+                          <span className="item-email">{inquiry.email}</span>
+                        </div>
+                        <span className={`status-badge ${inquiry.status}`}>
+                          {inquiry.status}
+                        </span>
                       </div>
-                      <span className={`status-badge ${inquiry.status}`}>
-                        {inquiry.status}
-                      </span>
+                    ))}
+                    {inquiries.length === 0 && (
+                      <p className="no-data">No inquiries yet</p>
+                    )}
+                  </div>
+                </div>
+
+                <div className="recent-section">
+                  <h3>Quick Stats</h3>
+                  <div className="quick-stats">
+                    <div className="quick-stat-item">
+                      <FiUsers className="quick-stat-icon" />
+                      <div>
+                        <span className="quick-stat-value">{stats.users}</span>
+                        <span className="quick-stat-label">Total Users</span>
+                      </div>
                     </div>
-                  ))}
-                  {inquiries.length === 0 && (
-                    <p className="no-data">No inquiries yet</p>
-                  )}
+                    <div className="quick-stat-item">
+                      <FiTruck className="quick-stat-icon" />
+                      <div>
+                        <span className="quick-stat-value">{stats.services}</span>
+                        <span className="quick-stat-label">Total Services</span>
+                      </div>
+                    </div>
+                    <div className="quick-stat-item">
+                      <FiMessageSquare className="quick-stat-icon" />
+                      <div>
+                        <span className="quick-stat-value">{stats.inquiries}</span>
+                        <span className="quick-stat-label">Total Inquiries</span>
+                      </div>
+                    </div>
+                    <div className="quick-stat-item">
+                      <FiClock className="quick-stat-icon" />
+                      <div>
+                        <span className="quick-stat-value">{inquiries.filter(i => i.status === 'pending').length}</span>
+                        <span className="quick-stat-label">Pending Inquiries</span>
+                      </div>
+                    </div>
+                  </div>
                 </div>
               </div>
             </div>
@@ -431,11 +505,11 @@ const AdminDashboard = () => {
                   </div>
                 </div>
 
-                {/* Product Distribution */}
+                {/* Service Distribution */}
                 <div className="analytics-card">
-                  <h3><FiPackage /> Product Distribution</h3>
+                  <h3><FiTruck /> Service Distribution</h3>
                   <div className="horizontal-bars">
-                    {analytics.productDistribution.slice(0, 6).map((item, idx) => (
+                    {analytics.serviceDistribution.slice(0, 6).map((item, idx) => (
                       <div key={idx} className="h-bar-row">
                         <span className="h-bar-label">{item.name}</span>
                         <div className="h-bar-track">
@@ -446,7 +520,7 @@ const AdminDashboard = () => {
                         <span className="h-bar-pct">{item.pct}%</span>
                       </div>
                     ))}
-                    {analytics.productDistribution.length === 0 && (
+                    {analytics.serviceDistribution.length === 0 && (
                       <p className="no-data">No data available</p>
                     )}
                   </div>
@@ -509,10 +583,10 @@ const AdminDashboard = () => {
                       </div>
                     </div>
                     <div className="summary-item">
-                      <FiPackage className="summary-icon" />
+                      <FiTruck className="summary-icon" />
                       <div>
-                        <span className="summary-value">{stats.products}</span>
-                        <span className="summary-label">Total Products</span>
+                        <span className="summary-value">{stats.services}</span>
+                        <span className="summary-label">Total Services</span>
                       </div>
                     </div>
                     <div className="summary-item">
@@ -577,50 +651,80 @@ const AdminDashboard = () => {
             </div>
           )}
 
-          {/* Products Tab */}
-          {activeTab === 'products' && (
+          {/* Services Tab */}
+          {activeTab === 'services' && (
             <div className="table-content">
               <div className="table-header">
-                <h3>All Products ({products.length})</h3>
-                <Link to="/products" className="btn-add">
+                <h3>Service Categories ({websiteData.serviceCategories.length})</h3>
+                <Link to="/services" className="btn-add">
                   View Site
                 </Link>
               </div>
-              <div className="table-wrapper">
-                <table className="data-table">
-                  <thead>
-                    <tr>
-                      <th>Name</th>
-                      <th>Category</th>
-                      <th>Status</th>
-                      <th>Created</th>
-                    </tr>
-                  </thead>
-                  <tbody>
-                    {products.map((p) => (
-                      <tr key={p._id}>
-                        <td>{p.name}</td>
-                        <td>
-                          <span className="category-badge">
-                            {p.category}
-                          </span>
-                        </td>
-                        <td>
-                          <span className={`status-badge ${p.isActive ? 'active' : 'inactive'}`}>
-                            {p.isActive ? 'Active' : 'Inactive'}
-                          </span>
-                        </td>
-                        <td>{new Date(p.createdAt).toLocaleDateString()}</td>
-                      </tr>
-                    ))}
-                    {products.length === 0 && (
-                      <tr>
-                        <td colSpan="4" className="no-data">No products found</td>
-                      </tr>
-                    )}
-                  </tbody>
-                </table>
+              <div className="services-categories-grid">
+                {websiteData.serviceCategories.map((category, idx) => (
+                  <div key={idx} className="service-category-card">
+                    <div className="category-header">
+                      <h4>{category.name}</h4>
+                      <span className="category-count">{category.services.length} services</span>
+                    </div>
+                    <div className="category-services-list">
+                      {category.services.map((service, sIdx) => (
+                        <div key={sIdx} className="category-service-item">
+                          <FiCheckCircle className="service-check" />
+                          <span>{service}</span>
+                        </div>
+                      ))}
+                    </div>
+                  </div>
+                ))}
               </div>
+
+              {services.length > 0 && (
+                <>
+                  <div className="table-header" style={{ marginTop: '2rem' }}>
+                    <h3>Backend Services ({services.length})</h3>
+                  </div>
+                  <div className="table-wrapper">
+                    <table className="data-table">
+                      <thead>
+                        <tr>
+                          <th>Name</th>
+                          <th>Category</th>
+                          <th>Status</th>
+                          <th>Created</th>
+                          <th>Actions</th>
+                        </tr>
+                      </thead>
+                      <tbody>
+                        {services.map((s) => (
+                          <tr key={s._id}>
+                            <td>{s.name}</td>
+                            <td>
+                              <span className="category-badge">
+                                {s.category}
+                              </span>
+                            </td>
+                            <td>
+                              <span className={`status-badge ${s.isActive ? 'active' : 'inactive'}`}>
+                                {s.isActive ? 'Active' : 'Inactive'}
+                              </span>
+                            </td>
+                            <td>{new Date(s.createdAt).toLocaleDateString()}</td>
+                            <td>
+                              <button
+                                className="btn-action delete"
+                                onClick={() => deleteProduct(s._id)}
+                              >
+                                Delete
+                              </button>
+                            </td>
+                          </tr>
+                        ))}
+                      </tbody>
+                    </table>
+                  </div>
+                </>
+              )}
             </div>
           )}
 
@@ -643,8 +747,9 @@ const AdminDashboard = () => {
                       </span>
                     </div>
                     <div className="inquiry-body">
-                      <p><strong>Product:</strong> {inquiry.product}</p>
-                      <p><strong>Quantity:</strong> {inquiry.quantity || 'Not specified'}</p>
+                      <p><strong>Service:</strong> {inquiry.service || inquiry.product || 'Not specified'}</p>
+                      <p><strong>Cargo Type:</strong> {inquiry.cargoType || 'Not specified'}</p>
+                      <p><strong>Country:</strong> {inquiry.country || 'Not specified'}</p>
                       <p><strong>Message:</strong> {inquiry.message}</p>
                     </div>
                     <div className="inquiry-footer">
@@ -693,9 +798,9 @@ const AdminDashboard = () => {
                 {[
                   { key: 'hero', label: 'Hero Section', description: 'Main banner with company tagline and call-to-action buttons' },
                   { key: 'about', label: 'About Section', description: 'Company overview and key highlights' },
-                  { key: 'services', label: 'Services Section', description: 'Product categories and offerings' },
-                  { key: 'whyChooseUs', label: 'Why Choose Us', description: 'Quality commitments and advantages' },
-                  { key: 'contact', label: 'Contact Section', description: 'Contact form and information' },
+                  { key: 'services', label: 'Services Section', description: 'Logistics service categories and offerings' },
+                  { key: 'whyChooseUs', label: 'Why Choose Us', description: 'Reliability commitments and advantages' },
+                  { key: 'contact', label: 'Contact Section', description: 'Contact form and inquiry options' },
                 ].map((section) => (
                   <div key={section.key} className="settings-card">
                     <div className="settings-card-info">
