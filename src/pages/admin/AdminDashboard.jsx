@@ -4,7 +4,8 @@ import {
   FiHome, FiUsers, FiPackage, FiMessageSquare, 
   FiLogOut, FiMenu, FiX, FiTrendingUp,
   FiClock, FiCheckCircle, FiBarChart2,
-  FiGlobe, FiCalendar, FiArrowUp, FiArrowDown, FiMinus
+  FiGlobe, FiCalendar, FiArrowUp, FiArrowDown, FiMinus,
+  FiSettings
 } from 'react-icons/fi';
 import { useAuth } from '../../context/AuthContext';
 import axios from 'axios';
@@ -19,6 +20,14 @@ const AdminDashboard = () => {
   const [products, setProducts] = useState([]);
   const [inquiries, setInquiries] = useState([]);
   const [sidebarOpen, setSidebarOpen] = useState(true);
+  const [siteSettings, setSiteSettings] = useState({
+    hero: true,
+    about: true,
+    services: true,
+    whyChooseUs: true,
+    contact: true
+  });
+  const [savingSettings, setSavingSettings] = useState(false);
   
   const { user, logout, token } = useAuth();
   const navigate = useNavigate();
@@ -103,6 +112,7 @@ const AdminDashboard = () => {
   useEffect(() => {
     if (token) {
       fetchData();
+      fetchSiteSettings();
     }
   }, [token]);
 
@@ -130,6 +140,39 @@ const AdminDashboard = () => {
     }
   };
 
+  const fetchSiteSettings = async () => {
+    try {
+      const res = await axios.get(`${API_URL}/site-settings`);
+      if (res.data.data) {
+        setSiteSettings({
+          hero: res.data.data.hero ?? true,
+          about: res.data.data.about ?? true,
+          services: res.data.data.services ?? true,
+          whyChooseUs: res.data.data.whyChooseUs ?? true,
+          contact: res.data.data.contact ?? true
+        });
+      }
+    } catch (err) {
+      console.error('Error fetching site settings:', err);
+    }
+  };
+
+  const updateSiteSettings = async (key, value) => {
+    setSavingSettings(true);
+    try {
+      const newSettings = { ...siteSettings, [key]: value };
+      setSiteSettings(newSettings);
+      await axios.put(`${API_URL}/site-settings`, newSettings, {
+        headers: { Authorization: `Bearer ${token}` }
+      });
+    } catch (err) {
+      console.error('Error updating site settings:', err);
+      setSiteSettings(siteSettings);
+    } finally {
+      setSavingSettings(false);
+    }
+  };
+
   const handleLogout = () => {
     logout();
     navigate('/');
@@ -152,6 +195,7 @@ const AdminDashboard = () => {
     { id: 'users', name: 'Users', icon: <FiUsers /> },
     { id: 'products', name: 'Products', icon: <FiPackage /> },
     { id: 'inquiries', name: 'Inquiries', icon: <FiMessageSquare /> },
+    { id: 'site-settings', name: 'Site Settings', icon: <FiSettings /> },
   ];
 
   return (
@@ -631,6 +675,56 @@ const AdminDashboard = () => {
                 {inquiries.length === 0 && (
                   <p className="no-data">No inquiries found</p>
                 )}
+              </div>
+            </div>
+          )}
+
+          {/* Site Settings Tab */}
+          {activeTab === 'site-settings' && (
+            <div className="site-settings-content">
+              <div className="settings-header">
+                <h3>Front Page Section Visibility</h3>
+                <p className="settings-subtitle">
+                  Toggle sections on/off to control what appears on the home page.
+                </p>
+              </div>
+
+              <div className="settings-grid">
+                {[
+                  { key: 'hero', label: 'Hero Section', description: 'Main banner with company tagline and call-to-action buttons' },
+                  { key: 'about', label: 'About Section', description: 'Company overview and key highlights' },
+                  { key: 'services', label: 'Services Section', description: 'Product categories and offerings' },
+                  { key: 'whyChooseUs', label: 'Why Choose Us', description: 'Quality commitments and advantages' },
+                  { key: 'contact', label: 'Contact Section', description: 'Contact form and information' },
+                ].map((section) => (
+                  <div key={section.key} className="settings-card">
+                    <div className="settings-card-info">
+                      <h4>{section.label}</h4>
+                      <p>{section.description}</p>
+                    </div>
+                    <label className="toggle-switch">
+                      <input
+                        type="checkbox"
+                        checked={siteSettings[section.key]}
+                        onChange={(e) => updateSiteSettings(section.key, e.target.checked)}
+                        disabled={savingSettings}
+                      />
+                      <span className="toggle-slider"></span>
+                    </label>
+                  </div>
+                ))}
+              </div>
+
+              {savingSettings && (
+                <div className="settings-saving">
+                  <span className="saving-indicator">Saving...</span>
+                </div>
+              )}
+
+              <div className="settings-preview">
+                <Link to="/" target="_blank" className="btn-preview">
+                  Preview Home Page
+                </Link>
               </div>
             </div>
           )}
