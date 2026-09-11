@@ -2,7 +2,7 @@ import { FiMessageCircle } from 'react-icons/fi';
 import './WhatsApp.css';
 
 const WhatsApp = () => {
-  const phoneNumber = '919876543210';
+  const phoneNumber = '919876703899';
   const message = 'Hi, I would like to know more about your logistics services.';
   
   const handleClick = () => {

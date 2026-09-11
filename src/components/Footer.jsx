@@ -82,7 +82,7 @@ const Footer = () => {
                   <span>📍 Location: Phagwara, Punjab, India</span>
                 </div>
                 <div className="contact-item">
-                  <span>📞 +91 98765 43210</span>
+                  <span>📞 +91 98767 03899</span>
                 </div>
                 <div className="contact-item">
                   <span>✉️ info@jaspreetimpex.com</span>

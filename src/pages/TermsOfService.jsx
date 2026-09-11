@@ -87,7 +87,7 @@ const TermsOfService = () => {
             </p>
             <ul>
               <li>Email: info@jaspreetimpex.com</li>
-              <li>Phone: +91 98765 43210</li>
+              <li>Phone: +91 98767 03899</li>
             </ul>
 
             <div className="legal-nav">

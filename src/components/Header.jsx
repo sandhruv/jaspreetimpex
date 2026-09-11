@@ -79,7 +79,7 @@ const Header = () => {
           <div className="top-bar-content">
             <div className="top-bar-left">
               <span className="top-bar-item">
-                <FiPhone /> +91 98765 43210
+                <FiPhone /> +91 98767 03899
               </span>
               <span className="top-bar-item">
                 <FiMail /> info@jaspreetimpex.com
@@ -248,7 +248,7 @@ const Header = () => {
             </Link>
           )}
           <div className="mobile-contact-info">
-            <span><FiPhone /> +91 98765 43210</span>
+            <span><FiPhone /> +91 98767 03899</span>
             <span><FiMail /> info@jaspreetimpex.com</span>
           </div>
         </div>

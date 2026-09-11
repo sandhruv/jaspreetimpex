@@ -87,7 +87,7 @@ const PrivacyPolicy = () => {
             </p>
             <ul>
               <li>Email: info@jaspreetimpex.com</li>
-              <li>Phone: +91 98765 43210</li>
+              <li>Phone: +91 98767 03899</li>
               <li>Address: Phagwara, Punjab, India</li>
             </ul>
 

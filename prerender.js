@@ -27,7 +27,7 @@ const routes = [
   {
     path: '/contact-us',
     title: 'Contact Us - Jaspreet Impex | Get Quote for Logistics Services',
-    description: 'Contact Jaspreet Impex for logistics inquiries. Phone: +91 98765 43210. Email: info@jaspreetimpex.com. Located in Phagwara, Punjab, India.',
+    description: 'Contact Jaspreet Impex for logistics inquiries. Phone: +91 98767 03899. Email: info@jaspreetimpex.com. Located in Phagwara, Punjab, India.',
     keywords: 'contact Jaspreet Impex, logistics inquiry, freight forwarding quote, customs clearance',
   },
   {
