@@ -58,7 +58,7 @@ const Services = () => {
         'https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=240&fit=crop',
         'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=240&fit=crop',
         'https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=400&h=240&fit=crop',
-        'https://images.unsplash.com/photo-1735020886196-bed638cc1809?w=400&h=240&fit=crop',
+        'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400&h=240&fit=crop',
       ],
       description: 'Smooth customs clearance services ensuring compliance with Indian import/export regulations and minimizing delays.',
     },
@@ -93,7 +93,7 @@ const Services = () => {
       images: [
         'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=400&h=240&fit=crop',
         'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=240&fit=crop',
-        'https://images.unsplash.com/photo-1742858492775-8f58f645aa12?w=400&h=240&fit=crop',
+        'https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=400&h=240&fit=crop',
         'https://images.unsplash.com/photo-1553413077-190dd305871c?w=400&h=240&fit=crop',
       ],
       description: 'Expert handling of hazardous materials, oversized cargo, and specialized logistics solutions with strict compliance to safety regulations.',

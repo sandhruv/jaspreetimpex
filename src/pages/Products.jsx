@@ -71,7 +71,7 @@ const Products = () => {
           name: 'Regulatory Compliance',
           description: 'Ensuring all shipments meet international trade regulations and standards.',
           features: ['Legal Compliance', 'Risk Management', 'Audit Support'],
-          image: 'https://images.unsplash.com/photo-1735020886196-bed638cc1809?w=400&h=200&fit=crop',
+          image: 'https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400&h=200&fit=crop',
         },
       ],
     },
@@ -129,7 +129,7 @@ const Products = () => {
           name: 'E-commerce Logistics',
           description: 'Tailored solutions for online businesses including fulfillment and returns.',
           features: ['Order Processing', 'Returns Management', 'Integration'],
-          image: 'https://images.unsplash.com/photo-1742858492775-8f58f645aa12?w=400&h=200&fit=crop',
+          image: 'https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=400&h=200&fit=crop',
         },
         {
           name: 'Supply Chain Management',
