@@ -21,13 +21,13 @@ const Products = () => {
           name: 'Air Freight',
           description: 'Fast and secure air cargo services for urgent international shipments and high-value goods.',
           features: ['Express Handling', 'Global Air Cargo', 'Real-Time Tracking'],
-          image: 'https://images.unsplash.com/photo-1436491865332-7a61a109db05?w=400&h=200&fit=crop',
+          image: 'https://images.unsplash.com/photo-1474302770737-173ee21bab63?w=400&h=200&fit=crop',
         },
         {
           name: 'Sea Freight (FCL & LCL)',
           description: 'Full Container Load and Less than Container Load sea cargo services with efficient port coordination.',
           features: ['FCL & LCL', 'Global Ports', 'Container Shipping'],
-          image: 'https://images.unsplash.com/photo-1494412574643-ff11b0a5eb19?w=400&h=200&fit=crop',
+          image: 'https://images.unsplash.com/photo-1605732562742-aec009732351?w=400&h=200&fit=crop',
         },
         {
           name: 'Road Transportation',
