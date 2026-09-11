@@ -38,7 +38,7 @@ const Services = () => {
       ],
       images: [
         'https://images.unsplash.com/photo-1474302770737-173ee21bab63?w=400&h=240&fit=crop',
-        'https://images.unsplash.com/photo-1605732562742-aec009732351?w=400&h=240&fit=crop',
+        'https://images.unsplash.com/photo-1577988749525-e1c40a73f3f5?w=400&h=240&fit=crop',
         'https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=400&h=240&fit=crop',
         'https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=240&fit=crop',
       ],
