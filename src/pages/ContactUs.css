@@ -156,22 +156,14 @@
   color: var(--color-accent);
 }
 
-.gst-badge,
-.cert-badge {
+.gst-badge {
   padding: 15px;
   border-radius: var(--border-radius);
   display: flex;
   align-items: center;
   gap: 12px;
   margin-bottom: 15px;
-}
-
-.gst-badge {
   background: rgba(13, 110, 110, 0.2);
-}
-
-.cert-badge {
-  background: rgba(255, 255, 255, 0.05);
 }
 
 .gst-label,
@@ -184,21 +176,6 @@
   font-family: var(--font-primary);
   font-weight: 700;
   color: var(--color-accent);
-}
-
-.cert-icon {
-  font-size: 2rem;
-}
-
-.cert-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.cert-title {
-  font-family: var(--font-primary);
-  font-weight: 700;
-  color: var(--color-white);
 }
 
 /* Map Section */

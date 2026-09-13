@@ -86,7 +86,6 @@ const Header = () => {
               </span>
             </div>
             <div className="top-bar-right">
-              <span className="top-bar-item">ISO 9002 Certified</span>
               <span className="top-bar-item">GST: 03ATPPK3375A1ZX</span>
             </div>
           </div>

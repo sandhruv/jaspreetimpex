@@ -227,12 +227,8 @@ const ContactUs = () => {
                 </div>
               </div>
 
-              <div className="cert-badge">
-                <span className="cert-icon">🏅</span>
-                <div className="cert-info">
-                  <span className="cert-title">ISO 9002 Certified</span>
-                  <span className="cert-text">GST: 03ATPPK3375A1ZX</span>
-                </div>
+              <div className="gst-badge">
+                <span className="cert-text">GST: 03ATPPK3375A1ZX</span>
               </div>
             </div>
           </div>

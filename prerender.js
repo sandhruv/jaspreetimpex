@@ -9,14 +9,14 @@ const routes = [
   {
     path: '/',
     title: 'Jaspreet Impex | Logistics Solutions - Freight Forwarding, Customs Clearance India',
-    description: 'Jaspreet Impex - Leading logistics company in India offering freight forwarding, customs clearance, warehousing, and supply chain management. 22+ years experience, ISO 9002 certified, serving 50+ countries.',
-    keywords: 'logistics company India, freight forwarding India, customs clearance services, supply chain management, Jaspreet Impex, Phagwara, Punjab, ISO 9002 certified',
+    description: 'Jaspreet Impex - Leading logistics company in India offering freight forwarding, customs clearance, warehousing, and supply chain management. 22+ years experience, serving 50+ countries.',
+    keywords: 'logistics company India, freight forwarding India, customs clearance services, supply chain management, Jaspreet Impex, Phagwara, Punjab',
   },
   {
     path: '/about-us',
-    title: 'About Us - Jaspreet Impex | ISO 9002 Certified Logistics Company',
-    description: 'Learn about Jaspreet Impex - trusted logistics partner since 2003. ISO 9002 certified, serving 50+ countries with freight forwarding, customs clearance, and supply chain solutions.',
-    keywords: 'about Jaspreet Impex, logistics company Punjab, ISO 9002 certified logistics, customs house agent India',
+    title: 'About Us - Jaspreet Impex | Logistics Company',
+    description: 'Learn about Jaspreet Impex - trusted logistics partner since 2003. Serving 50+ countries with freight forwarding, customs clearance, and supply chain solutions.',
+    keywords: 'about Jaspreet Impex, logistics company Punjab, customs house agent India',
   },
   {
     path: '/products',

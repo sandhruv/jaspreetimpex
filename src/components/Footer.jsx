@@ -89,12 +89,8 @@ const Footer = () => {
                 </div>
               </div>
 
-              <div className="certification-badge">
-                <span className="cert-icon">🏅</span>
-                <div className="cert-info">
-                  <span className="cert-title">ISO 9002 Certified</span>
-                  <span className="cert-text">GST: 03ATPPK3375A1ZX</span>
-                </div>
+              <div className="gst-info">
+                <span className="cert-text">GST: 03ATPPK3375A1ZX</span>
               </div>
             </div>
           </div>
@@ -113,8 +109,6 @@ const Footer = () => {
               <Link to="/terms-of-service">Terms of Service</Link>
               <span className="separator">|</span>
               <span>Licensed Customs House Agent</span>
-              <span className="separator">|</span>
-              <span>ISO 9002 Certified</span>
             </div>
           </div>
         </div>

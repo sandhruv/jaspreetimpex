@@ -131,31 +131,6 @@
   margin-top: 3px;
 }
 
-.certification-badge {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  padding: 15px;
-  background: rgba(13, 110, 110, 0.2);
-  border-radius: var(--border-radius);
-}
-
-.cert-icon {
-  font-size: 2rem;
-}
-
-.cert-info {
-  display: flex;
-  flex-direction: column;
-}
-
-.cert-title {
-  font-family: var(--font-primary);
-  font-weight: 700;
-  font-size: 1rem;
-  color: var(--color-white);
-}
-
 .cert-text {
   font-size: 0.8rem;
   color: rgba(255, 255, 255, 0.7);
@@ -259,10 +234,6 @@
   }
 
   .contact-item {
-    justify-content: center;
-  }
-
-  .certification-badge {
     justify-content: center;
   }
 
