@@ -232,7 +232,7 @@ export default function ContactUs() {
         <div className="container">
           <div className="map-placeholder">
             <img
-              src="https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=1200&h=300&fit=crop"
+              src="/images/hero.jpg"
               alt="Jaspreet Impex Global Network"
               className="map-image"
               loading="lazy"

@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     url: "https://jaspreetimpex.com/contact-us",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1526778548025-fa2f459cd5c1?w=1200&h=630&fit=crop",
+        url: "/images/hero.jpg",
         width: 1200,
         height: 630,
         alt: "Contact Jaspreet Impex Logistics",
