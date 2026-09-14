@@ -2,7 +2,6 @@ const express = require('express');
 const mongoose = require('mongoose');
 const cors = require('cors');
 const path = require('path');
-const fs = require('fs');
 require('dotenv').config();
 
 const authRoutes = require('./routes/auth');
@@ -18,7 +17,7 @@ const allowedOrigins = [
   'https://www.jaspreetimpex.com',
   'https://jaspreetimpex.com',
   'https://jaspreetimpex.onrender.com',
-  'http://localhost:5173'
+  'http://localhost:3000'
 ];
 
 app.use(cors({
@@ -70,36 +69,6 @@ app.use('/api/site-settings', siteSettingsRoutes);
 // Health check
 app.get('/api/health', (req, res) => {
   res.json({ status: 'ok', message: 'Server is running' });
-});
-
-// Serve frontend static files
-const frontendPath = path.join(__dirname, '..', 'dist');
-app.use(express.static(frontendPath));
-
-// Try to serve prerendered HTML for each route (better for SEO)
-const prerenderRoutes = ['about-us', 'products', 'contact-us', 'photos'];
-
-app.get('*', (req, res) => {
-  const cleanPath = req.path.replace(/\/+$/, '') || '/';
-
-  // Check if a prerendered index.html exists for this route
-  for (const route of prerenderRoutes) {
-    if (cleanPath === `/${route}` || cleanPath === `/${route}/`) {
-      const prerenderedFile = path.join(frontendPath, route, 'index.html');
-      if (fs.existsSync(prerenderedFile)) {
-        return res.sendFile(prerenderedFile);
-      }
-    }
-  }
-
-  // For root path, serve the prerendered root index.html
-  if (cleanPath === '/') {
-    const prerenderedRoot = path.join(frontendPath, 'index.html');
-    return res.sendFile(prerenderedRoot);
-  }
-
-  // SPA fallback for all other routes (admin, API, etc.)
-  res.sendFile(path.join(frontendPath, 'index.html'));
 });
 
 const PORT = process.env.PORT || 5000;
