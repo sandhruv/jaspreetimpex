@@ -19,7 +19,7 @@ const categories = [
     services: ["Air Freight", "Sea Freight (FCL & LCL)", "Road Transportation", "Multimodal Transport"],
     images: [
       "/images/air-freight.jpg",
-      "/images/sea-freight.jpg",
+      "https://images.unsplash.com/photo-1617952739858-28043cecdae3?w=400&h=240&fit=crop",
       "/images/road-transport.jpg",
       "/images/road-transport.jpg",
     ],
@@ -32,10 +32,10 @@ const categories = [
     icon: <FiShield />,
     services: ["Import Clearance", "Export Clearance", "Documentation Handling", "Regulatory Compliance"],
     images: [
-      "/images/customs.jpg",
-      "/images/customs.jpg",
-      "/images/customs.jpg",
-      "/images/customs.jpg",
+      "https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=400&h=240&fit=crop",
+      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=240&fit=crop",
+      "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400&h=240&fit=crop",
+      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=240&fit=crop",
     ],
     description:
       "Smooth customs clearance services ensuring compliance with Indian import/export regulations and minimizing delays.",
