@@ -22,6 +22,9 @@ export default function Hero() {
           alt="Container port with gantry cranes loading freight containers"
           className="hero-bg-image"
           loading="eager"
+          width={1920}
+          height={1080}
+          style={{ imageRendering: 'high-quality' }}
         />
         <div className="hero-gradient"></div>
         <div className="hero-pattern"></div>
