@@ -1,7 +1,0 @@
-User-Agent: *
-Allow: /
-Disallow: /admin
-Disallow: /api/
-Disallow: /login
-
-Sitemap: https://jaspreetimpex.com/sitemap.xml
