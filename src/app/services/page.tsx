@@ -87,7 +87,7 @@ const categories = [
         name: "Storage Solutions",
         description: "Flexible warehouse space tailored to your inventory requirements.",
         features: ["Secure Storage", "Climate Control", "Scalable Space"],
-        image: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=400&h=200&fit=crop",
+        image: "/images/warehouse.jpg",
       },
       {
         name: "Inventory Management",

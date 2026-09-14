@@ -46,8 +46,8 @@ const categories = [
     icon: <FiBox />,
     services: ["Storage Solutions", "Inventory Management", "Order Fulfillment", "Last-Mile Delivery"],
     images: [
-      "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=400&h=240&fit=crop",
-      "https://images.unsplash.com/photo-1565891741441-64926e441838?w=400&h=240&fit=crop",
+      "/images/warehouse.jpg",
+      "/images/warehouse.jpg",
       "https://images.unsplash.com/photo-1553413077-190dd305871c?w=400&h=240&fit=crop",
       "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=400&h=240&fit=crop",
     ],
