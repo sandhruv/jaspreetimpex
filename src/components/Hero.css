@@ -21,8 +21,6 @@
   height: 100%;
   object-fit: cover;
   object-position: center;
-  image-rendering: high-quality;
-  image-rendering: -webkit-optimize-contrast;
 }
 
 .hero-gradient {
@@ -53,10 +51,9 @@
   opacity: 0;
   transform: translateY(30px);
   transition: opacity 0.8s ease, transform 0.8s ease;
-  background: rgba(0, 0, 0, 0.4);
+  background: rgba(0, 0, 0, 0.5);
   padding: 40px;
   border-radius: 16px;
-  backdrop-filter: blur(4px);
 }
 
 .hero.visible .hero-content {

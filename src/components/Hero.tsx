@@ -24,7 +24,6 @@ export default function Hero() {
           loading="eager"
           width={1920}
           height={1080}
-          style={{ imageRendering: 'high-quality' }}
         />
         <div className="hero-gradient"></div>
         <div className="hero-pattern"></div>
