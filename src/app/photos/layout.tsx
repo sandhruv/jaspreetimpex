@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     url: "https://jaspreetimpex.com/photos",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1494412574643-ff11b0a5eb19?w=1200&h=630&fit=crop",
+        url: "/images/hero.png",
         width: 1200,
         height: 630,
         alt: "Jaspreet Impex Logistics Operations - Container Terminal",
