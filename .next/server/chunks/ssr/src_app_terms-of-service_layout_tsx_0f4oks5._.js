@@ -1,0 +1,3 @@
+module.exports=[23161,a=>{"use strict";var b=a.i(7997);a.s(["default",0,function({children:a}){return(0,b.jsx)(b.Fragment,{children:a})},"metadata",0,{title:"Terms of Service - Jaspreet Impex | Terms & Conditions",description:"Terms of Service for Jaspreet Impex - Terms and conditions for using our website and logistics services.",robots:{index:!0,follow:!0},alternates:{canonical:"https://jaspreetimpex.com/terms-of-service"}}])},54225,function(a){a.n(a.i(23161))}];
+
+//# sourceMappingURL=src_app_terms-of-service_layout_tsx_0f4oks5._.js.map

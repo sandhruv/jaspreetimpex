@@ -1,0 +1,258 @@
+.services-section {
+  position: relative;
+  background: var(--color-light);
+  overflow: hidden;
+}
+
+.services-bg {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 40%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(13, 110, 110, 0.03), rgba(244, 161, 0, 0.03));
+  border-radius: 0 0 0 50%;
+}
+
+.services-tabs {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  margin-bottom: 50px;
+  flex-wrap: wrap;
+}
+
+.tab-btn {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 30px;
+  background: var(--color-white);
+  border: 2px solid var(--color-gray-light);
+  border-radius: 50px;
+  font-family: var(--font-primary);
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  cursor: pointer;
+  transition: var(--transition);
+}
+
+.tab-btn:hover {
+  border-color: var(--color-primary);
+  color: var(--color-primary);
+}
+
+.tab-btn.active {
+  background: var(--color-primary);
+  border-color: var(--color-primary);
+  color: var(--color-white);
+  box-shadow: 0 4px 15px rgba(13, 110, 110, 0.3);
+}
+
+.tab-icon {
+  font-size: 1.2rem;
+}
+
+.services-content {
+  background: var(--color-white);
+  border-radius: var(--border-radius-lg);
+  padding: 50px;
+  box-shadow: var(--shadow-md);
+  margin-bottom: 50px;
+}
+
+.content-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 50px;
+  align-items: center;
+}
+
+.content-info h3 {
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color: var(--color-secondary);
+}
+
+.content-info > p {
+  font-size: 1.05rem;
+  color: var(--color-text-light);
+  margin-bottom: 30px;
+  line-height: 1.7;
+}
+
+.product-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 15px;
+  margin-bottom: 30px;
+}
+
+.product-item {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 1rem;
+  color: var(--color-text);
+}
+
+.product-bullet {
+  width: 8px;
+  height: 8px;
+  background: var(--color-primary);
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.visual-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+}
+
+.visual-card {
+  background: var(--color-light);
+  border-radius: var(--border-radius);
+  overflow: hidden;
+  transition: var(--transition);
+  animation: fadeInUp 0.5s ease forwards;
+  opacity: 0;
+}
+
+@keyframes fadeInUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.visual-card:hover {
+  transform: translateY(-5px);
+  box-shadow: var(--shadow-md);
+}
+
+.card-placeholder {
+  height: 120px;
+  background: linear-gradient(135deg, var(--color-secondary), #16213e);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.card-image {
+  width: 100%;
+  height: 140px;
+  object-fit: cover;
+  display: block;
+}
+
+.card-number {
+  font-family: var(--font-primary);
+  font-size: 2.5rem;
+  font-weight: 800;
+  color: rgba(255, 255, 255, 0.2);
+}
+
+.card-info {
+  padding: 15px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.card-name {
+  font-weight: 600;
+  font-size: 0.95rem;
+  color: var(--color-secondary);
+}
+
+.card-arrow {
+  color: var(--color-primary);
+  font-size: 1.2rem;
+  transition: var(--transition);
+}
+
+.visual-card:hover .card-arrow {
+  transform: translate(3px, -3px);
+}
+
+.services-cta {
+  background: linear-gradient(135deg, var(--color-secondary), #16213e);
+  border-radius: var(--border-radius-lg);
+  padding: 50px;
+  text-align: center;
+}
+
+.cta-content h3 {
+  font-size: 2rem;
+  color: var(--color-white);
+  margin-bottom: 15px;
+}
+
+.cta-content p {
+  font-size: 1.1rem;
+  color: rgba(255, 255, 255, 0.8);
+  margin-bottom: 25px;
+  max-width: 500px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+/* Responsive */
+@media (max-width: 992px) {
+  .content-grid {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+
+  .services-content {
+    padding: 30px;
+  }
+
+  .services-cta {
+    padding: 40px 30px;
+  }
+}
+
+@media (max-width: 576px) {
+  .services-tabs {
+    flex-direction: column;
+    align-items: stretch;
+  }
+
+  .tab-btn {
+    justify-content: center;
+    padding: 12px 20px;
+    font-size: 0.9rem;
+  }
+
+  .services-content {
+    padding: 20px;
+  }
+
+  .content-info h3 {
+    font-size: 1.5rem;
+  }
+
+  .product-list {
+    grid-template-columns: 1fr;
+  }
+
+  .visual-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .services-cta {
+    padding: 30px 20px;
+  }
+
+  .cta-content h3 {
+    font-size: 1.5rem;
+  }
+}
+
