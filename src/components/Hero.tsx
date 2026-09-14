@@ -18,7 +18,7 @@ export default function Hero() {
     <section className="hero" ref={heroRef}>
       <div className="hero-background">
         <img
-          src="/images/hero.png"
+          src="/images/hero.jpg"
           alt="Container port with gantry cranes loading freight containers"
           className="hero-bg-image"
           loading="eager"

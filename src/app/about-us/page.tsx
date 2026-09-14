@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     url: "https://jaspreetimpex.com/about-us",
     images: [
       {
-        url: "/images/hero.png",
+        url: "/images/hero.jpg",
         width: 1200,
         height: 630,
         alt: "Jaspreet Impex Global Logistics Operations",
