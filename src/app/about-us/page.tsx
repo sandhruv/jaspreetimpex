@@ -122,7 +122,7 @@ export default function AboutUs() {
             <div className="story-visual">
               <div className="story-image">
                 <img
-                  src="https://images.unsplash.com/photo-1493946740644-2d8a1f1a6aff?w=800&h=400&fit=crop"
+                  src="/images/about.jpg"
                   alt="Jaspreet Impex Global Logistics Operations - Container terminal with cranes"
                   className="story-img"
                   loading="lazy"

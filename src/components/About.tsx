@@ -94,7 +94,7 @@ export default function About() {
           <div className="about-visual slide-in-right">
             <div className="about-image-main">
               <img
-                src="https://images.unsplash.com/photo-1661963559074-679de6f4f04d?w=800&h=450&fit=crop"
+                src="/images/about.jpg"
                 alt="Aerial view of warehouse with trucks and logistics operations"
                 className="about-img"
                 loading="lazy"
