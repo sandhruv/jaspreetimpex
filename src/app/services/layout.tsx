@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     url: "https://jaspreetimpex.com/services",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1474302770737-173ee21bab63?w=1200&h=630&fit=crop",
+        url: "https://images.unsplash.com/photo-1436491865332-7a61a109db05?w=1200&h=630&fit=crop",
         width: 1200,
         height: 630,
         alt: "Jaspreet Impex Logistics Services - Air Freight and Sea Freight",

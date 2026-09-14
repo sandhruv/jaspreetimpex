@@ -18,10 +18,10 @@ const categories = [
     icon: <FiGlobe />,
     services: ["Air Freight", "Sea Freight (FCL & LCL)", "Road Transportation", "Multimodal Transport"],
     images: [
+      "https://images.unsplash.com/photo-1436491865332-7a61a109db05?w=400&h=240&fit=crop",
+      "https://images.unsplash.com/photo-1617952739858-28043cecdae3?w=400&h=240&fit=crop",
+      "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=400&h=240&fit=crop",
       "https://images.unsplash.com/photo-1474302770737-173ee21bab63?w=400&h=240&fit=crop",
-      "https://images.unsplash.com/photo-1762141226718-a57447db19cb?w=400&h=240&fit=crop",
-      "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=400&h=240&fit=crop",
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=240&fit=crop",
     ],
     description:
       "International freight forwarding services with seamless coordination across air, sea, and road transport for global shipping needs.",
@@ -32,10 +32,10 @@ const categories = [
     icon: <FiShield />,
     services: ["Import Clearance", "Export Clearance", "Documentation Handling", "Regulatory Compliance"],
     images: [
-      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=240&fit=crop",
-      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=240&fit=crop",
       "https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=400&h=240&fit=crop",
+      "https://images.unsplash.com/photo-1554224155-6726b3ff858f?w=400&h=240&fit=crop",
       "https://images.unsplash.com/photo-1521791136064-7986c2920216?w=400&h=240&fit=crop",
+      "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=400&h=240&fit=crop",
     ],
     description:
       "Smooth customs clearance services ensuring compliance with Indian import/export regulations and minimizing delays.",
@@ -46,9 +46,9 @@ const categories = [
     icon: <FiBox />,
     services: ["Storage Solutions", "Inventory Management", "Order Fulfillment", "Last-Mile Delivery"],
     images: [
-      "https://images.unsplash.com/photo-1553413077-190dd305871c?w=400&h=240&fit=crop",
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=240&fit=crop",
+      "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=400&h=240&fit=crop",
       "https://images.unsplash.com/photo-1565891741441-64926e441838?w=400&h=240&fit=crop",
+      "https://images.unsplash.com/photo-1553413077-190dd305871c?w=400&h=240&fit=crop",
       "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=400&h=240&fit=crop",
     ],
     description:
@@ -60,10 +60,10 @@ const categories = [
     icon: <FiTruck />,
     services: ["DG Shipment Handling", "Project Cargo", "E-commerce Logistics", "Supply Chain Management"],
     images: [
-      "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=400&h=240&fit=crop",
-      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=240&fit=crop",
+      "https://images.unsplash.com/photo-1558618666-fcd25c85f82e?w=400&h=240&fit=crop",
       "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=400&h=240&fit=crop",
       "https://images.unsplash.com/photo-1553413077-190dd305871c?w=400&h=240&fit=crop",
+      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=240&fit=crop",
     ],
     description:
       "Expert handling of hazardous materials, oversized cargo, and specialized logistics solutions with strict compliance to safety regulations.",

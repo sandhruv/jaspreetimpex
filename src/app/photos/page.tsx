@@ -3,14 +3,14 @@
 import { useState } from "react";
 
 const photos = [
-  { id: 1, title: "Container Terminal", category: "facility", description: "Busy container terminal with gantry cranes loading freight containers to trucks", image: "https://images.unsplash.com/photo-1778441531349-b0c874287ebc?w=600&h=600&fit=crop" },
-  { id: 2, title: "Warehouse Operations", category: "facility", description: "Modern warehouse with organized shelving and forklift operations", image: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=600&h=600&fit=crop" },
-  { id: 3, title: "Cargo Aircraft", category: "machinery", description: "Air freight operations for urgent international shipments", image: "https://images.unsplash.com/photo-1767868278896-2ec1025d7424?w=600&h=600&fit=crop" },
-  { id: 4, title: "Container Ship", category: "facility", description: "Large cargo ship loaded with containers at port", image: "https://images.unsplash.com/photo-1774929108070-b60d3879e071?w=600&h=600&fit=crop" },
-  { id: 5, title: "Customs Documentation", category: "quality", description: "Customs clearance documentation and compliance processing", image: "https://images.unsplash.com/photo-1450101499163-c8848c66ca85?w=600&h=600&fit=crop" },
-  { id: 6, title: "Forklift Operations", category: "machinery", description: "Forklift moving cargo at distribution warehouse", image: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=600&h=600&fit=crop" },
-  { id: 7, title: "Truck Fleet", category: "machinery", description: "Fleet of trucks for road transportation across India", image: "https://images.unsplash.com/photo-1601584115197-04ecc0da31d7?w=600&h=600&fit=crop" },
-  { id: 8, title: "Cargo Loading", category: "facility", description: "Efficient cargo loading and unloading at port", image: "https://images.unsplash.com/photo-1759389003674-bbc78848a532?w=600&h=600&fit=crop" },
+  { id: 1, title: "Container Terminal", category: "facility", description: "Busy container terminal with gantry cranes loading freight containers to trucks", image: "https://images.unsplash.com/photo-1494412574643-ff11b0a5eb19?w=600&h=600&fit=crop" },
+  { id: 2, title: "Warehouse Operations", category: "facility", description: "Modern warehouse with organized shelving and forklift operations", image: "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=600&h=600&fit=crop" },
+  { id: 3, title: "Cargo Aircraft", category: "machinery", description: "Air freight operations for urgent international shipments", image: "https://images.unsplash.com/photo-1436491865332-7a61a109db05?w=600&h=600&fit=crop" },
+  { id: 4, title: "Container Ship", category: "facility", description: "Large cargo ship loaded with containers at port", image: "https://images.unsplash.com/photo-1617952739858-28043cecdae3?w=600&h=600&fit=crop" },
+  { id: 5, title: "Customs Documentation", category: "quality", description: "Customs clearance documentation and compliance processing", image: "https://images.unsplash.com/photo-1568992687947-868a62a9f521?w=600&h=600&fit=crop" },
+  { id: 6, title: "Forklift Operations", category: "machinery", description: "Forklift moving cargo at distribution warehouse", image: "https://images.unsplash.com/photo-1661963559074-679de6f4f04d?w=600&h=600&fit=crop" },
+  { id: 7, title: "Truck Fleet", category: "machinery", description: "Fleet of trucks for road transportation across India", image: "https://images.unsplash.com/photo-1519003722824-194d4455a60c?w=600&h=600&fit=crop" },
+  { id: 8, title: "Cargo Loading", category: "facility", description: "Efficient cargo loading and unloading at port", image: "https://images.unsplash.com/photo-1493946740644-2d8a1f1a6aff?w=600&h=600&fit=crop" },
   { id: 9, title: "GPS Tracking", category: "quality", description: "Real-time cargo tracking and monitoring system", image: "https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=600&h=600&fit=crop" },
   { id: 10, title: "Distribution Hub", category: "facility", description: "Last-mile delivery distribution center", image: "https://images.unsplash.com/photo-1565891741441-64926e441838?w=600&h=600&fit=crop" },
   { id: 11, title: "Safety Equipment", category: "quality", description: "Safety protocols and equipment for DG shipment handling", image: "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=600&h=600&fit=crop" },

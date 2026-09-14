@@ -42,7 +42,7 @@ export const metadata: Metadata = {
       "Leading logistics company in India offering freight forwarding, customs clearance, warehousing, and supply chain solutions. Serving 50+ countries.",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&h=630&fit=crop",
+        url: "https://images.unsplash.com/photo-1494412574643-ff11b0a5eb19?w=1200&h=630&fit=crop",
         width: 1200,
         height: 630,
         alt: "Jaspreet Impex Logistics Solutions",
@@ -54,7 +54,7 @@ export const metadata: Metadata = {
     title: "Jaspreet Impex | Logistics Solutions",
     description:
       "Leading logistics company in India offering freight forwarding, customs clearance, and supply chain solutions.",
-    images: ["https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=1200&h=630&fit=crop"],
+    images: ["https://images.unsplash.com/photo-1494412574643-ff11b0a5eb19?w=1200&h=630&fit=crop"],
   },
   robots: {
     index: true,

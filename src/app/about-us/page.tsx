@@ -22,7 +22,7 @@ export const metadata: Metadata = {
     url: "https://jaspreetimpex.com/about-us",
     images: [
       {
-        url: "https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=1200&h=630&fit=crop",
+        url: "https://images.unsplash.com/photo-1494412574643-ff11b0a5eb19?w=1200&h=630&fit=crop",
         width: 1200,
         height: 630,
         alt: "Jaspreet Impex Global Logistics Operations",
@@ -122,7 +122,7 @@ export default function AboutUs() {
             <div className="story-visual">
               <div className="story-image">
                 <img
-                  src="https://images.unsplash.com/photo-1578575437130-527eed3abbec?w=800&h=400&fit=crop"
+                  src="https://images.unsplash.com/photo-1493946740644-2d8a1f1a6aff?w=800&h=400&fit=crop"
                   alt="Jaspreet Impex Global Logistics Operations - Container terminal with cranes"
                   className="story-img"
                   loading="lazy"
