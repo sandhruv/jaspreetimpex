@@ -3,6 +3,7 @@ import "./globals.css";
 import LayoutWrapper from "@/components/LayoutWrapper";
 import { AuthProvider } from "@/contexts/AuthContext";
 import JsonLd from "@/components/JsonLd";
+import WelcomeSound from "@/components/WelcomeSound";
 
 export const metadata: Metadata = {
   title: {
@@ -81,6 +82,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="theme-color" content="#0d6e6e" />
       </head>
       <body>
+        <WelcomeSound />
         <JsonLd />
         <AuthProvider>
           <LayoutWrapper>{children}</LayoutWrapper>
