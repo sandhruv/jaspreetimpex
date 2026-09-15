@@ -18,10 +18,10 @@ const categories = [
     icon: <FiGlobe />,
     services: ["Air Freight", "Sea Freight (FCL & LCL)", "Road Transportation", "Multimodal Transport"],
     images: [
-      "/images/air-freight.jpg",
+      "https://images.unsplash.com/photo-1436491865332-7a61a109db05?w=400&h=240&fit=crop",
       "/images/sea-freight.jpg",
-      "/images/road-transport.jpg",
-      "/images/road-transport.jpg",
+      "https://images.unsplash.com/photo-1745956983820-6e960f7e8472?w=400&h=240&fit=crop",
+      "https://images.unsplash.com/photo-1474302770737-173ee21bab63?w=400&h=240&fit=crop",
     ],
     description:
       "International freight forwarding services with seamless coordination across air, sea, and road transport for global shipping needs.",
@@ -46,10 +46,10 @@ const categories = [
     icon: <FiBox />,
     services: ["Storage Solutions", "Inventory Management", "Order Fulfillment", "Last-Mile Delivery"],
     images: [
-      "/images/warehouse.jpg",
-      "/images/warehouse.jpg",
-      "/images/warehouse.jpg",
-      "/images/warehouse.jpg",
+      "https://images.unsplash.com/photo-1587293852726-70cdb56c2866?w=400&h=240&fit=crop",
+      "https://images.unsplash.com/photo-1565891741441-64926e441838?w=400&h=240&fit=crop",
+      "https://images.unsplash.com/photo-1553413077-190dd305871c?w=400&h=240&fit=crop",
+      "https://images.unsplash.com/photo-1745956983820-6e960f7e8472?w=400&h=240&fit=crop",
     ],
     description:
       "Strategically located warehouses offering flexible storage, detailed inventory management, and streamlined distribution.",
@@ -60,10 +60,10 @@ const categories = [
     icon: <FiTruck />,
     services: ["DG Shipment Handling", "Project Cargo", "E-commerce Logistics", "Supply Chain Management"],
     images: [
-      "/images/dg-handling.jpg",
-      "/images/dg-handling.jpg",
-      "/images/dg-handling.jpg",
-      "/images/dg-handling.jpg",
+      "https://images.unsplash.com/photo-1586528116311-ad8dd3c8310d?w=400&h=240&fit=crop",
+      "https://images.unsplash.com/photo-1566576912321-d58ddd7a6088?w=400&h=240&fit=crop",
+      "https://images.unsplash.com/photo-1553413077-190dd305871c?w=400&h=240&fit=crop",
+      "https://images.unsplash.com/photo-1581091226825-a6a2a5aee158?w=400&h=240&fit=crop",
     ],
     description:
       "Expert handling of hazardous materials, oversized cargo, and specialized logistics solutions with strict compliance to safety regulations.",
