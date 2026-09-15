@@ -21,7 +21,7 @@ const categories = [
         name: "Air Freight",
         description: "Fast and secure air cargo services for urgent international shipments and high-value goods.",
         features: ["Express Handling", "Global Air Cargo", "Real-Time Tracking"],
-        image: "https://images.unsplash.com/photo-1436491865332-7a61a109db05?w=400&h=200&fit=crop",
+        image: "https://images.unsplash.com/photo-1767868278896-2ec1025d7424?w=400&h=200&fit=crop",
       },
       {
         name: "Sea Freight (FCL & LCL)",

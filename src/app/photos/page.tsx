@@ -5,7 +5,7 @@ import { useState } from "react";
 const photos = [
   { id: 1, title: "Container Terminal", category: "facility", description: "Busy container terminal with gantry cranes loading freight containers to trucks", image: "/images/hero.jpg" },
   { id: 2, title: "Warehouse Operations", category: "facility", description: "Modern warehouse with organized shelving and forklift operations", image: "/images/warehouse.jpg" },
-  { id: 3, title: "Cargo Aircraft", category: "machinery", description: "Air freight operations for urgent international shipments", image: "https://images.unsplash.com/photo-1436491865332-7a61a109db05?w=600&h=600&fit=crop" },
+  { id: 3, title: "Cargo Aircraft", category: "machinery", description: "Air freight operations for urgent international shipments", image: "https://images.unsplash.com/photo-1767868278896-2ec1025d7424?w=600&h=600&fit=crop" },
   { id: 4, title: "Container Ship", category: "facility", description: "Large cargo ship loaded with containers at port", image: "/images/sea-freight.jpg" },
   { id: 5, title: "Customs Documentation", category: "quality", description: "Customs clearance documentation and compliance processing", image: "/images/customs.jpg" },
   { id: 6, title: "Forklift Operations", category: "machinery", description: "Forklift moving cargo at distribution warehouse", image: "https://images.unsplash.com/photo-1553413077-190dd305871c?w=600&h=600&fit=crop" },

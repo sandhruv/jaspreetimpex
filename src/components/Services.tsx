@@ -18,7 +18,7 @@ const categories = [
     icon: <FiGlobe />,
     services: ["Air Freight", "Sea Freight (FCL & LCL)", "Road Transportation", "Multimodal Transport"],
     images: [
-      "https://images.unsplash.com/photo-1436491865332-7a61a109db05?w=400&h=240&fit=crop",
+      "https://images.unsplash.com/photo-1767868278896-2ec1025d7424?w=400&h=240&fit=crop",
       "/images/sea-freight.jpg",
       "https://images.unsplash.com/photo-1745956983820-6e960f7e8472?w=400&h=240&fit=crop",
       "https://images.unsplash.com/photo-1474302770737-173ee21bab63?w=400&h=240&fit=crop",
